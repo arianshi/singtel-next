@@ -1,12 +1,19 @@
 import React from 'react';
-import styles from './table.module.css'
+import Thead from "./Thead";
+import Tbody from "./Tbody";
+
+import styles from './index.module.css';
 
 interface TableProps {
-  title: string;
+  columns: any;
+  dataSource: any;
 }
 
-const Table: React.FC<TableProps> = ({ title}) => {
-  return <div className={styles.table}>{title}</div>;
+const Table: React.FC<TableProps> = ({ columns, dataSource }) => {
+  return <div className={styles.table}>
+    <Thead columns={columns}/>
+    <Tbody columns={columns} dataSource={dataSource}/>
+  </div>;
 };
 
 export default Table;

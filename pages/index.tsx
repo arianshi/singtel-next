@@ -1,8 +1,46 @@
 import Head from 'next/head';
 import Table from './components/Table';
 import styles from '../styles/Home.module.css';
+import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react';
 
 export default function Home() {
+    const columns = [
+        {
+            title: 'Operator',
+            key: 'operator',
+            dataIndex: 'operator',
+            render: (e:  ReactElement<any, string | JSXElementConstructor<any>> ) => <span >{e}</span>,
+       },
+       {
+           title: 'Headset Display',
+           key: 'display',
+           dataIndex: 'display',
+           render: (e:  ReactElement<any, string | JSXElementConstructor<any>> ) => <span >{e}</span>,
+       },
+       {
+         title: '3G Availability',
+         key: 'availability',
+         dataIndex: 'availability',
+         render: (e:  ReactElement<any, string | JSXElementConstructor<any>> ) => <span >{e}</span>,
+      },
+  ]
+  const data = [
+      {
+          operator: '*Celcom Axiata (LTE)',
+          display: 'CELCOM / My Celcom / 502 19',
+          availability: 'Yes'
+      },
+      {
+          operator: '*DiGi Telecom (LTE)',
+          display: 'DiGi 1800 / DiGi /  MYMY18',
+          availability: 'Yes'
+      },
+      {
+          operator: '*Maxis (LTE)',
+          display: 'U Mobile / MYS 18 / MY 18',
+          availability: 'Yes'
+      }
+  ]
   return (
     <>
       <Head>
@@ -13,7 +51,10 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <span className={styles.title}>Table Component</span>
-        <Table title={'Table Component'}/>
+          <Table
+              columns={columns}
+              dataSource={data}
+          />
       </main>
     </>
   )

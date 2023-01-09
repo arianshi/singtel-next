@@ -2,11 +2,13 @@ import React from 'react';
 import styles from './index.module.css'
 
 interface THeadProps {
-  title: string;
+  columns: any;
 }
 
-const THead: React.FC<THeadProps> = ({ title}) => {
-  return <div className={styles.table}>{title}</div>;
+const THead: React.FC<THeadProps> = ({ columns}) => {
+  return <div className={styles.thead}>
+    {columns.map((item: any, index: number)=> <span className={styles.title} key={index}>{item.title}</span>)}
+  </div>;
 };
 
 export default THead;

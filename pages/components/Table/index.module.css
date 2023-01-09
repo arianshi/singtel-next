@@ -1,0 +1,8 @@
+.table {
+    width: 800px;
+    height: 416px;
+    box-shadow: 0 2px 24px rgb(24 32 82 / 5%);
+    border-radius: 16px;
+    border: 1px solid grey;
+    overflow: hidden;
+}
