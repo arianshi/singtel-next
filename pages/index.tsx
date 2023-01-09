@@ -39,6 +39,11 @@ export default function Home() {
           operator: '*Maxis (LTE)',
           display: 'U Mobile / MYS 18 / MY 18',
           availability: 'Yes'
+      },
+      {
+          operator: 'U Mobile (LTE)',
+          display: 'U Mobile / MYS 18 / MY 18',
+          availability: 'Yes'
       }
   ]
   return (

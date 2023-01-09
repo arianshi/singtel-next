@@ -3,14 +3,26 @@
     align-items: center;
     color: #000;
     height: 84px;
-    line-height: 84px;
+    margin: 0 24px;
+    border-bottom: 1px solid #E1E1E1;
 }
+
+.tbodyWrapper:last-child{
+    border-bottom: none;
+}
+
 .tbodyWrapper .tbodyItem {
     flex: 1;
-    padding: 0 24px;
     font-weight: 350;
     font-size: 20px;
     line-height: 35px;
     letter-spacing: 0.001em;
     font-style: normal;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.tbodyWrapper .tbodyItem:nth-child(2) {
+    flex: 1.5;
 }
