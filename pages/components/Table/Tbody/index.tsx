@@ -11,6 +11,7 @@ interface columnsProps {
 interface TbodyProps {
     columns: columnsProps[];
     data: [];
+    rowSelection: any,
 }
 
 const Tbody: React.FC<TbodyProps> = ({columns, data}) => {
@@ -18,17 +19,18 @@ const Tbody: React.FC<TbodyProps> = ({columns, data}) => {
         return (
             <div
                 className={styles.tbodyWrapper}
-                key={index}
-            >
-                    {columns.map((item, index) => {
-                        return (
-                            <span className={styles.tbodyItem} key={item.key + index}>
-                      {item.render
-                          ? item.render(object[item.key], object)
-                          : object[item.key]}
-                    </span>
-                        );
-                    })}
+                key={index}>
+                <div className={styles.tbodyRowSelection}>
+                    <input className={styles.inputRadio} type="radio" value="2"/>
+                    <span className={styles.radio}/>
+                </div>
+                {columns.map((item, index) => {
+                    return (
+                        <span className={styles.tbodyItem} key={item.key + index}>
+                                {item.render  ? item.render(object[item.key], object) : object[item.key]}
+                        </span>
+                    );
+                })}
             </div>
         );
     }

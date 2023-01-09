@@ -8,12 +8,13 @@ interface TableProps {
   showHead: boolean;
   columns: any;
   data: any;
+  rowSelection: any
 }
 
-const Table: React.FC<TableProps> = ({ showHead, columns, data }) => {
+const Table: React.FC<TableProps> = ({ rowSelection, showHead, columns, data }) => {
   return <div className={styles.table}>
     {showHead && <Thead columns={columns}/>}
-    <Tbody columns={columns} data={data}/>
+    <Tbody rowSelection={rowSelection} columns={columns} data={data}/>
   </div>;
 };
 
