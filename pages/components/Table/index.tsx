@@ -7,13 +7,13 @@ import styles from './index.module.css';
 interface TableProps {
   showHead: boolean;
   columns: any;
-  dataSource: any;
+  data: any;
 }
 
-const Table: React.FC<TableProps> = ({ showHead, columns, dataSource }) => {
+const Table: React.FC<TableProps> = ({ showHead, columns, data }) => {
   return <div className={styles.table}>
     {showHead && <Thead columns={columns}/>}
-    <Tbody columns={columns} dataSource={dataSource}/>
+    <Tbody columns={columns} data={data}/>
   </div>;
 };
 

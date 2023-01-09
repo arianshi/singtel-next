@@ -58,7 +58,7 @@ export default function Home() {
         <span className={styles.title}>Table Component</span>
         <Table
           columns={columns}
-          dataSource={data}
+          data={data}
           showHead
         />
       </main>

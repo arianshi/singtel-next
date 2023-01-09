@@ -10,10 +10,10 @@ interface columnsProps {
 
 interface TbodyProps {
     columns: columnsProps[];
-    dataSource: [];
+    data: [];
 }
 
-const Tbody: React.FC<TbodyProps> = ({columns, dataSource}) => {
+const Tbody: React.FC<TbodyProps> = ({columns, data}) => {
     const readerTbody = (index: number, object: any) => {
         return (
             <div
@@ -33,7 +33,7 @@ const Tbody: React.FC<TbodyProps> = ({columns, dataSource}) => {
         );
     }
     return <div className={styles.table}>
-        {dataSource?.map((object, index) => {
+        {data?.map((object, index) => {
             return readerTbody(index, object);
         })}
     </div>;
