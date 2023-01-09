@@ -1,9 +1,12 @@
 import Head from 'next/head';
 import Table from './components/Table';
 import styles from '../styles/Home.module.css';
-import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react';
+import {ReactElement, JSXElementConstructor, ReactFragment, ReactPortal, useState} from 'react';
 
 export default function Home() {
+ const [type, setType] = useState('checkbox');
+ const [selectedRowKeys, setSelectedRowKeys] = useState(['4']);
+
   const columns = [
         {
             title: 'Operator',
@@ -23,7 +26,7 @@ export default function Home() {
          dataIndex: 'availability',
          render: (e:  ReactElement<any, string | JSXElementConstructor<any>> ) => <span >{e}</span>,
       },
-  ]
+  ];
   const data = [
       {
           operator: '*Celcom Axiata (LTE)',
@@ -45,7 +48,8 @@ export default function Home() {
           display: 'U Mobile / MYS 18 / MY 18',
           availability: 'Yes'
       }
-  ]
+  ];
+
   return (
     <>
       <Head>
@@ -60,6 +64,22 @@ export default function Home() {
           columns={columns}
           data={data}
           showHead
+          rowSelection={{
+              type,
+              selectedRowKeys,
+              onChange: (selectedRowKeys: [], selectedRows: number) => {
+                  console.log('onChange:', selectedRowKeys, selectedRows);
+                  setSelectedRowKeys(selectedRowKeys);
+              },
+              onSelect: (selected: number, record: number, selectedRows: number) => {
+                  console.log('onSelect:', selected, record, selectedRows);
+              },
+              checkboxProps: (record: any) => {
+                  return {
+                      disabled: record.id === '4',
+                  };
+              },
+          }}
         />
       </main>
     </>
