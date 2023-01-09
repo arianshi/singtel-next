@@ -1,5 +1,6 @@
 import React, {useCallback, useState, memo} from 'react';
 import styles from './index.module.css'
+import {number, string} from "prop-types";
 
 interface columnsProps {
     title: string;
@@ -14,33 +15,49 @@ interface TbodyProps {
     rowSelection: any,
 }
 
-const Tbody: React.FC<TbodyProps> = ({columns, data}) => {
 
-    const [selectedRowKeys, setSelectedRowKeys] = useState(['']);
+const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data}) => {
 
-    const onSelect = useCallback(
+    const [selectedRowKeys, setSelectedRowKeys] = useState(rowSelection.selectedRowKeys);
+    const isCheckbox = rowSelection.type === 'checkbox';
+
+    const handleClick = useCallback(
         (e: any) => {
             const value = e.target.value;
-            let newCheckboxArr = [...selectedRowKeys];
-            if (newCheckboxArr.indexOf(value) >= 0) {
-                newCheckboxArr.splice(newCheckboxArr.indexOf(value), 1)
-            } else {
-                newCheckboxArr.push(value);
-            }
-            setSelectedRowKeys(newCheckboxArr);
+            isCheckbox ? handleCheckBoxClick(value) : handleRadioClick(value);
         },
         [selectedRowKeys]
     );
 
-    const readerTbody = (index: number, object: any) => {
+    const handleCheckBoxClick = (value: string) => {
+        let newCheckboxArr = [...selectedRowKeys];
+        if (newCheckboxArr.indexOf(value) >= 0) {
+            newCheckboxArr.splice(newCheckboxArr.indexOf(value), 1)
+        } else {
+            newCheckboxArr.push(value);
+        }
+        setSelectedRowKeys(newCheckboxArr);
+    }
 
+    const handleRadioClick = (value: string) => {
+        setSelectedRowKeys([value]);
+    }
+
+    rowSelection.onSelect(selectedRowKeys?.filter((i: string)=>i && i?.trim()))
+
+    const readerTbody = (index: number, object: any) => {
 
         return (
             <div
                 className={styles.tbodyWrapper}
                 key={index}>
-                <label className={selectedRowKeys.includes(index.toString()) ? styles.tbodyCheckboxChecked : styles.tbodyCheckbox}>
-                    <input onClick={onSelect}  className={styles.inputRadio} type="checkbox" name={'checkbox'} value={index}/>
+                <label className={selectedRowKeys.includes(index.toString()) ?
+                    styles[`${rowSelection.type}Checked`]: styles[rowSelection.type]}>
+                    <input onClick={handleClick}
+                           className={styles.inputRadio}
+                           type={rowSelection.type}
+                           name={rowSelection.type}
+                           value={index}/>
                 </label>
                 {columns.map((item, index) => {
                     return (

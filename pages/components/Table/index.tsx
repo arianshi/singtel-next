@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import Thead from "./Thead";
 import Tbody from "./Tbody";
 
@@ -18,4 +18,4 @@ const Table: React.FC<TableProps> = ({ rowSelection, showHead, columns, data }) 
   </div>;
 };
 
-export default Table;
+export default memo(Table);

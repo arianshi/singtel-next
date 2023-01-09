@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import Table from './components/Table';
 import styles from '../styles/Home.module.css';
-import {ReactElement, JSXElementConstructor, ReactFragment, ReactPortal, useState} from 'react';
+import {ReactElement, JSXElementConstructor, useState} from 'react';
 
 export default function Home() {
- const [type, setType] = useState('checkbox');
- const [selectedRowKeys, setSelectedRowKeys] = useState(['4']);
+ const [type, setType] = useState('radio');
+ const [selectedRowKeys, setSelectedRowKeys] = useState(['1']);
 
+  const selectedRowType = [ 'radio', 'checkbox'];
   const columns = [
         {
             title: 'Operator',
@@ -49,7 +50,11 @@ export default function Home() {
           availability: 'Yes'
       }
   ];
-
+  const handleTypeClick = (item: string) => {
+      setType(item);
+      setSelectedRowKeys([]);
+ }
+ console.log('type', type);
   return (
     <>
       <Head>
@@ -60,6 +65,15 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <span className={styles.title}>Table Component</span>
+        <div className={styles.tableFilter}>
+            <span className={styles.typeText}>Type:</span>
+            <div className={styles.tableType}>
+                {selectedRowType.map((item, index) => <span
+                    onClick={() => { handleTypeClick(item) }}
+                    key ={index}
+                    className={item === type ? styles.checked : styles.normal}>{item}</span>)}
+           </div>
+        </div>
         <Table
           columns={columns}
           data={data}
@@ -67,18 +81,9 @@ export default function Home() {
           rowSelection={{
               type,
               selectedRowKeys,
-              onChange: (selectedRowKeys: [], selectedRows: number) => {
-                  console.log('onChange:', selectedRowKeys, selectedRows);
-                  setSelectedRowKeys(selectedRowKeys);
-              },
-              onSelect: (selected: number, record: number, selectedRows: number) => {
-                  console.log('onSelect:', selected, record, selectedRows);
-              },
-              checkboxProps: (record: any) => {
-                  return {
-                      disabled: record.id === '4',
-                  };
-              },
+              onSelect: (selectedRowKeys: number) => {
+                  console.log('selectedRowKeys:', selectedRowKeys);
+              }
           }}
         />
       </main>
