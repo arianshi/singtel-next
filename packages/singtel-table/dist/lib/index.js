@@ -25,7 +25,7 @@ return /******/ (() => { // webpackBootstrap
   \********************************/
 /***/ (() => {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n> .tbodyWrapper {\\n|     display: flex;\\n|     align-items: center;\");\n\n//# sourceURL=webpack://singtel-table/./Tbody/index.module.css?");
+eval("throw new Error(\"Module build failed (from ../../node_modules/extract-text-webpack-plugin/dist/cjs.js):\\nTypeError: Cannot call a class as a function\\n    at _classCallCheck (/Users/arian/Documents/Singtel/singtel-next/node_modules/extract-text-webpack-plugin/dist/index.js:47:99)\\n    at Object.ExtractTextPlugin (/Users/arian/Documents/Singtel/singtel-next/node_modules/extract-text-webpack-plugin/dist/index.js:55:5)\");\n\n//# sourceURL=webpack://singtel-table/./Tbody/index.module.css?");
 
 /***/ }),
 
@@ -35,7 +35,7 @@ eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may ne
   \********************************/
 /***/ (() => {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n> .theadWrapper {\\n|     display: flex;\\n|     align-items: center;\");\n\n//# sourceURL=webpack://singtel-table/./Thead/index.module.css?");
+eval("throw new Error(\"Module build failed (from ../../node_modules/extract-text-webpack-plugin/dist/cjs.js):\\nTypeError: Cannot call a class as a function\\n    at _classCallCheck (/Users/arian/Documents/Singtel/singtel-next/node_modules/extract-text-webpack-plugin/dist/index.js:47:99)\\n    at Object.ExtractTextPlugin (/Users/arian/Documents/Singtel/singtel-next/node_modules/extract-text-webpack-plugin/dist/index.js:55:5)\");\n\n//# sourceURL=webpack://singtel-table/./Thead/index.module.css?");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may ne
   \**************************/
 /***/ (() => {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n> .table {\\n|     width: 800px;\\n|     height: auto;\");\n\n//# sourceURL=webpack://singtel-table/./index.module.css?");
+eval("throw new Error(\"Module build failed (from ../../node_modules/extract-text-webpack-plugin/dist/cjs.js):\\nTypeError: Cannot call a class as a function\\n    at _classCallCheck (/Users/arian/Documents/Singtel/singtel-next/node_modules/extract-text-webpack-plugin/dist/index.js:47:99)\\n    at Object.ExtractTextPlugin (/Users/arian/Documents/Singtel/singtel-next/node_modules/extract-text-webpack-plugin/dist/index.js:55:5)\");\n\n//# sourceURL=webpack://singtel-table/./index.module.css?");
 
 /***/ }),
 
