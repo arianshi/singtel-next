@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Table from '../packages/Table';
+import Table from '../packages/singtel-table';
 import styles from '../styles/Home.module.css';
 import { ReactElement, JSXElementConstructor, useState } from 'react';
 
