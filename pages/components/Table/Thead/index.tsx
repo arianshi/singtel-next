@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './index.module.css'
-import {compare} from "../utils/compare";
 
 interface THeadProps {
     columns: any;
@@ -10,9 +9,16 @@ interface THeadProps {
         onSelect: () => void,
     } | any;
     data: any;
+    setCopyNewData: any;
+}
+interface sortCheckedProps {
+    [key: string]: boolean;
 }
 
-const THead: React.FC<THeadProps> = ({ columns, rowSelection, data }) => {
+const THead: React.FC<THeadProps> = ({ columns, rowSelection, data, setCopyNewData }) => {
+
+    const [sortChecked, setSortChecked] = useState<sortCheckedProps>({});
+
     return <div className={styles.theadWrapper}>
         <div className={styles.theadContent}>
             {rowSelection && <label className={styles.checkbox}>
@@ -21,11 +27,16 @@ const THead: React.FC<THeadProps> = ({ columns, rowSelection, data }) => {
             {columns.map((item: any, index: number) => {
                 return <div  key={index} className={styles.theadItem}>
                     <span className={styles.theadItemText}>{item.title}</span>
-                    {item?.sorter && <div onClick={() => {
-                        data?.sort(compare(item.key, item.sortDirections || [item.defaultSortOrder]));
-                        item?.sorter(data);
-                    }}
-                      className={styles.theadItemSortWrapper}>
+                    {item?.sorter && <div
+                        className={`${styles.theadItemSortWrapper} ${sortChecked[index] ? styles.theadItemSortCheckedWrapper : ''}`}
+                        onClick={() => {
+                        data?.sort(item?.sorter);
+                        setCopyNewData(data.slice());
+                            setSortChecked({
+                                ...sortChecked,
+                                [index]: !sortChecked[index]
+                            });
+                    }}>
                      <span className={styles.theadItemSort}/>
                     </div>}
                 </div>

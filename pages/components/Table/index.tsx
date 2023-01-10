@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useState} from 'react';
 import Thead from "./Thead";
 import Tbody from "./Tbody";
 
@@ -16,9 +16,10 @@ interface TableProps {
 }
 
 const Table: React.FC<TableProps> = ({ rowSelection, showHead, columns, data }) => {
+  const [copyNewData, setCopyNewData] = useState(data);
   return <div className={styles.table}>
-    {showHead && <Thead rowSelection={rowSelection} columns={columns} data={data}/>}
-    <Tbody rowSelection={rowSelection} columns={columns} data={data}/>
+    {showHead && <Thead rowSelection={rowSelection} columns={columns} data={copyNewData} setCopyNewData={setCopyNewData}/>}
+    <Tbody rowSelection={rowSelection} columns={columns} data={copyNewData}/>
   </div>;
 };
 

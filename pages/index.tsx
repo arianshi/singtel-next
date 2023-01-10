@@ -19,39 +19,41 @@ export default function Home() {
         {
             id: 1,
             price: 170000,
-            operator: 'Celcom Axiata',
+            operator: 'Aelcom Axiatavvv',
             display: 'CELCOM / My Celcom / 502 19',
             availability: 'Yes',
         },
         {
             id: 2,
             price: 250000,
-            operator: 'DiGi Telecom',
+            operator: 'HiGiTelecom',
             display: 'DiGi 1800 / DiGi /  MYMY18',
             availability: 'Yes'
         },
         {
             id: 3,
             price: 160000,
-            operator: 'Maxis (LTE)',
+            operator: 'Kaxis (LTE)',
             display: 'U Mobile / MYS 18 / MY 18',
             availability: 'Yes'
         },
         {
             id: 4,
             price: 460000,
-            operator: 'U Mobile (LTE)',
+            operator: 'DMobile (LTE)',
             display: 'U Mobile / MYS 18 / MY 18',
             availability: 'Yes'
         }
     ]);
-
     const columns = [
         {
             title: 'Operator',
             key: 'operator',
             dataIndex: 'operator',
             render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => <span>{e}</span>,
+            /*sorter: (a: any, b: any) => {
+                return a.operator.length - b.operator.length;
+            },*/
         },
         {
             title: 'Price',
@@ -59,11 +61,11 @@ export default function Home() {
             dataIndex: 'price',
             defaultSortOrder: 'ascend',
             sortDirections: ['descend'],
-            sorter: (data: any) => {
-                setData(data?.slice());
-            },
             render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => {
                 return <span>{parseInt(e?.toString())?.toLocaleString('en-US')}</span>
+            },
+            sorter: (a: any, b: any) => {
+                return a.price - b.price;
             },
         },
         {

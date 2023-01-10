@@ -75,13 +75,16 @@
     cursor: pointer;
     width: 32px;
     height: 32px;
+    margin-left: 5px;
 }
-.theadItemSortWrapper:hover {
+.theadItemSortCheckedWrapper {
     width: 32px;
     height: 32px;
     background: #DEDAFA;
     border-radius: 100%;
+    margin-left: 5px;
 }
+
 .theadItemSort {
     display: flex;
     width: 10px;
