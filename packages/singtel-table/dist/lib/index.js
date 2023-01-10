@@ -8,35 +8,164 @@
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
+		define(["react"], factory);
 	else if(typeof exports === 'object')
-		exports["singtel-table"] = factory();
+		exports["singtel-table"] = factory(require("react"));
 	else
-		root["singtel-table"] = factory();
-})(self, () => {
+		root["singtel-table"] = factory(root["React"]);
+})(self, (__WEBPACK_EXTERNAL_MODULE_react__) => {
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./Tbody/index.module.css":
+/*!********************************!*\
+  !*** ./Tbody/index.module.css ***!
+  \********************************/
+/***/ (() => {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n> .tbodyWrapper {\\n|     display: flex;\\n|     align-items: center;\");\n\n//# sourceURL=webpack://singtel-table/./Tbody/index.module.css?");
+
+/***/ }),
+
+/***/ "./Thead/index.module.css":
+/*!********************************!*\
+  !*** ./Thead/index.module.css ***!
+  \********************************/
+/***/ (() => {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n> .theadWrapper {\\n|     display: flex;\\n|     align-items: center;\");\n\n//# sourceURL=webpack://singtel-table/./Thead/index.module.css?");
+
+/***/ }),
+
+/***/ "./index.module.css":
+/*!**************************!*\
+  !*** ./index.module.css ***!
+  \**************************/
+/***/ (() => {
+
+eval("throw new Error(\"Module parse failed: Unexpected token (1:0)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n> .table {\\n|     width: 800px;\\n|     height: auto;\");\n\n//# sourceURL=webpack://singtel-table/./index.module.css?");
+
+/***/ }),
+
+/***/ "./Tbody/index.tsx":
+/*!*************************!*\
+  !*** ./Tbody/index.tsx ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.module.css */ \"./Tbody/index.module.css\");\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_module_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconst Tbody = ({\n  rowSelection,\n  columns,\n  data\n}) => {\n  const [selectedRowKeys, setSelectedRowKeys] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(rowSelection?.selectedRowKeys || []);\n  const [selectedRows, setSelectedRows] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);\n  const isCheckbox = rowSelection?.type === 'checkbox';\n  const handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((e, object) => {\n    const value = e.target.value;\n    isCheckbox ? handleCheckBoxClick(value, object) : handleRadioClick(value, object);\n  }, [selectedRowKeys]);\n  const handleCheckBoxClick = (value, object) => {\n    let newCheckboxArr = [...selectedRowKeys];\n    if (newCheckboxArr.indexOf(value) >= 0) {\n      newCheckboxArr.splice(newCheckboxArr.indexOf(value), 1);\n    } else {\n      newCheckboxArr.push(value);\n    }\n    setSelectedRowKeys(newCheckboxArr);\n  };\n  const handleRadioClick = (value, object) => {\n    setSelectedRowKeys([value]);\n    setSelectedRows(object);\n  };\n  console.log('rowSelection', rowSelection);\n  rowSelection?.onSelect(selectedRowKeys?.filter(i => i && i?.trim()), selectedRows);\n  const readerTbody = (index, object, data) => {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n      className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().tbodyWrapper),\n      key: index\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n      className: `${(_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().tbodyContent)} ${data?.length - 1 === index ? (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().tbodyContentLast) : ''}`\n    }, rowSelection && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"label\", {\n      className: selectedRowKeys.includes(index.toString()) ? (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default())[`${rowSelection.type}Checked`] : (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default())[rowSelection.type]\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"input\", {\n      onClick: e => handleClick(e, object),\n      className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().inputRadio),\n      type: rowSelection.type,\n      name: rowSelection.type,\n      value: index\n    })), columns.map((item, index) => {\n      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"span\", {\n        className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().tbodyItem),\n        key: item.key + index\n      }, item.render ? item.render(object[item.key], object) : object[item.key]);\n    })));\n  };\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n    className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().tableContainer)\n  }, data?.map((object, index) => {\n    return readerTbody(index, object, data);\n  }));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Tbody);\n\n//# sourceURL=webpack://singtel-table/./Tbody/index.tsx?");
+
+/***/ }),
+
+/***/ "./Thead/index.tsx":
+/*!*************************!*\
+  !*** ./Thead/index.tsx ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.module.css */ \"./Thead/index.module.css\");\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_module_css__WEBPACK_IMPORTED_MODULE_1__);\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }\nfunction _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\nfunction _toPropertyKey(arg) { var key = _toPrimitive(arg, \"string\"); return typeof key === \"symbol\" ? key : String(key); }\nfunction _toPrimitive(input, hint) { if (typeof input !== \"object\" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || \"default\"); if (typeof res !== \"object\") return res; throw new TypeError(\"@@toPrimitive must return a primitive value.\"); } return (hint === \"string\" ? String : Number)(input); }\n\n\nconst THead = ({\n  columns,\n  rowSelection,\n  oldData,\n  newData,\n  setCopyNewData,\n  sortChecked,\n  setSortChecked\n}) => {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n    className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().theadWrapper)\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n    className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().theadContent)\n  }, rowSelection && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"label\", {\n    className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().checkbox)\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"input\", {\n    className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().inputRadio)\n  })), columns.map((item, index) => {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n      key: index,\n      className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().theadItem)\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"span\", {\n      className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().theadItemText)\n    }, item.title), item?.sorter && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n      className: `${(_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().theadItemSortWrapper)} ${sortChecked[index] ? (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().theadItemSortCheckedWrapper) : ''}`,\n      onClick: () => {\n        newData?.sort(item?.sorter);\n        setCopyNewData(newData?.slice());\n        setSortChecked(_objectSpread(_objectSpread({}, sortChecked), {}, {\n          [index]: !sortChecked[index]\n        }));\n      }\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"span\", {\n      className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().theadItemSort)\n    })));\n  })));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (THead);\n\n//# sourceURL=webpack://singtel-table/./Thead/index.tsx?");
+
+/***/ }),
 
 /***/ "./index.tsx":
 /*!*******************!*\
   !*** ./index.tsx ***!
   \*******************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("throw new Error(\"Module build failed (from ../../node_modules/babel-loader/lib/index.js):\\nSyntaxError: /Users/arian/Documents/Singtel/singtel-next/packages/singtel-table/index.tsx: Unexpected reserved word 'interface'. (7:0)\\n\\n\\u001b[0m \\u001b[90m  5 |\\u001b[39m \\u001b[36mimport\\u001b[39m styles \\u001b[36mfrom\\u001b[39m \\u001b[32m'./index.module.css'\\u001b[39m\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m  6 |\\u001b[39m\\u001b[0m\\n\\u001b[0m\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m  7 |\\u001b[39m \\u001b[36minterface\\u001b[39m \\u001b[33mTableProps\\u001b[39m {\\u001b[0m\\n\\u001b[0m \\u001b[90m    |\\u001b[39m \\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m  8 |\\u001b[39m   showHead\\u001b[33m:\\u001b[39m boolean\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m  9 |\\u001b[39m   columns\\u001b[33m:\\u001b[39m any\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 10 |\\u001b[39m   data\\u001b[33m:\\u001b[39m any\\u001b[33m;\\u001b[39m\\u001b[0m\\n    at instantiate (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:67:32)\\n    at constructor (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:364:12)\\n    at Parser.raise (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:3363:19)\\n    at Parser.checkReservedWord (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:12475:12)\\n    at Parser.parseIdentifierName (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:12423:12)\\n    at Parser.parseIdentifier (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:12398:23)\\n    at Parser.parseExprAtom (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:11553:27)\\n    at Parser.parseExprSubscripts (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:11182:23)\\n    at Parser.parseUpdate (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:11164:21)\\n    at Parser.parseMaybeUnary (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:11138:23)\\n    at Parser.parseMaybeUnaryOrPrivate (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:10967:61)\\n    at Parser.parseExprOps (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:10973:23)\\n    at Parser.parseMaybeConditional (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:10948:23)\\n    at Parser.parseMaybeAssign (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:10906:21)\\n    at Parser.parseExpressionBase (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:10856:23)\\n    at /Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:10851:39\\n    at Parser.allowInAnd (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:12646:16)\\n    at Parser.parseExpression (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:10851:17)\\n    at Parser.parseStatementContent (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:13107:23)\\n    at Parser.parseStatementLike (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:12963:17)\\n    at Parser.parseModuleItem (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:12944:17)\\n    at Parser.parseBlockOrModuleBlockBody (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:13569:36)\\n    at Parser.parseBlockBody (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:13561:10)\\n    at Parser.parseProgram (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:12853:10)\\n    at Parser.parseTopLevel (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:12843:25)\\n    at Parser.parse (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:14751:10)\\n    at parse (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/parser/lib/index.js:14793:38)\\n    at parser (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/core/lib/parser/index.js:41:34)\\n    at parser.next (<anonymous>)\\n    at normalizeFile (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/core/lib/transformation/normalize-file.js:65:38)\\n    at normalizeFile.next (<anonymous>)\\n    at run (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/core/lib/transformation/index.js:21:50)\\n    at run.next (<anonymous>)\\n    at transform (/Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/core/lib/transform.js:22:41)\\n    at transform.next (<anonymous>)\\n    at step (/Users/arian/Documents/Singtel/singtel-next/node_modules/gensync/index.js:261:32)\\n    at /Users/arian/Documents/Singtel/singtel-next/node_modules/gensync/index.js:273:13\\n    at async.call.result.err.err (/Users/arian/Documents/Singtel/singtel-next/node_modules/gensync/index.js:223:11)\\n    at /Users/arian/Documents/Singtel/singtel-next/node_modules/gensync/index.js:189:28\\n    at /Users/arian/Documents/Singtel/singtel-next/node_modules/@babel/core/lib/gensync-utils/async.js:68:7\\n    at /Users/arian/Documents/Singtel/singtel-next/node_modules/gensync/index.js:113:33\\n    at step (/Users/arian/Documents/Singtel/singtel-next/node_modules/gensync/index.js:287:14)\\n    at /Users/arian/Documents/Singtel/singtel-next/node_modules/gensync/index.js:273:13\\n    at async.call.result.err.err (/Users/arian/Documents/Singtel/singtel-next/node_modules/gensync/index.js:223:11)\\n    at /Users/arian/Documents/Singtel/singtel-next/node_modules/gensync/index.js:37:40\");\n\n//# sourceURL=webpack://singtel-table/./index.tsx?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Thead__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Thead */ \"./Thead/index.tsx\");\n/* harmony import */ var _Tbody__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Tbody */ \"./Tbody/index.tsx\");\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.module.css */ \"./index.module.css\");\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_module_css__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\nconst Table = ({\n  rowSelection,\n  showHead,\n  columns,\n  data\n}) => {\n  const [sortChecked, setSortChecked] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});\n  const [copyNewData, setCopyNewData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(data);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n    className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().table)\n  }, showHead && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Thead__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n    rowSelection: rowSelection,\n    columns: columns,\n    oldData: data,\n    newData: copyNewData,\n    sortChecked: sortChecked,\n    setSortChecked: setSortChecked,\n    setCopyNewData: setCopyNewData\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Tbody__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n    rowSelection: rowSelection,\n    columns: columns,\n    data: copyNewData\n  }));\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(Table));\n\n//# sourceURL=webpack://singtel-table/./index.tsx?");
+
+/***/ }),
+
+/***/ "react":
+/*!****************************************************************************************************!*\
+  !*** external {"root":"React","commonjs2":"react","commonjs":"react","amd":"react","umd":"react"} ***!
+  \****************************************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./index.tsx"]();
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./index.tsx");
 /******/ 	
 /******/ 	return __webpack_exports__;
 /******/ })()
