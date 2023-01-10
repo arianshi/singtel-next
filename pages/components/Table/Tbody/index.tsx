@@ -19,17 +19,18 @@ interface TbodyProps {
 const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data}) => {
 
     const [selectedRowKeys, setSelectedRowKeys] = useState(rowSelection.selectedRowKeys);
+    const [selectedRows, setSelectedRows] = useState([]);
     const isCheckbox = rowSelection.type === 'checkbox';
 
     const handleClick = useCallback(
-        (e: any) => {
+        (e: any, object: any) => {
             const value = e.target.value;
-            isCheckbox ? handleCheckBoxClick(value) : handleRadioClick(value);
+            isCheckbox ? handleCheckBoxClick(value, object) : handleRadioClick(value, object);
         },
         [selectedRowKeys]
     );
 
-    const handleCheckBoxClick = (value: string) => {
+    const handleCheckBoxClick = (value: string, object: any) => {
         let newCheckboxArr = [...selectedRowKeys];
         if (newCheckboxArr.indexOf(value) >= 0) {
             newCheckboxArr.splice(newCheckboxArr.indexOf(value), 1)
@@ -39,11 +40,12 @@ const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data}) => {
         setSelectedRowKeys(newCheckboxArr);
     }
 
-    const handleRadioClick = (value: string) => {
+    const handleRadioClick = (value: string, object: any) => {
         setSelectedRowKeys([value]);
+        setSelectedRows(object);
     }
 
-    rowSelection.onSelect(selectedRowKeys?.filter((i: string)=>i && i?.trim()))
+    rowSelection.onSelect(selectedRowKeys?.filter((i: string)=>i && i?.trim()), selectedRows)
 
     const readerTbody = (index: number, object: any) => {
 
@@ -53,7 +55,7 @@ const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data}) => {
                 key={index}>
                 <label className={selectedRowKeys.includes(index.toString()) ?
                     styles[`${rowSelection.type}Checked`]: styles[rowSelection.type]}>
-                    <input onClick={handleClick}
+                    <input onClick={(e: any) => handleClick(e, object)}
                            className={styles.inputRadio}
                            type={rowSelection.type}
                            name={rowSelection.type}

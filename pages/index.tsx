@@ -30,21 +30,25 @@ export default function Home() {
   ];
   const data = [
       {
+          id: 1,
           operator: '*Celcom Axiata (LTE)',
           display: 'CELCOM / My Celcom / 502 19',
           availability: 'Yes'
       },
       {
+          id: 2,
           operator: '*DiGi Telecom (LTE)',
           display: 'DiGi 1800 / DiGi /  MYMY18',
           availability: 'Yes'
       },
       {
+          id: 3,
           operator: '*Maxis (LTE)',
           display: 'U Mobile / MYS 18 / MY 18',
           availability: 'Yes'
       },
       {
+          id: 4,
           operator: 'U Mobile (LTE)',
           display: 'U Mobile / MYS 18 / MY 18',
           availability: 'Yes'
@@ -81,8 +85,8 @@ export default function Home() {
           rowSelection={{
               type,
               selectedRowKeys,
-              onSelect: (selectedRowKeys: number) => {
-                  console.log('selectedRowKeys:', selectedRowKeys);
+              onSelect: (selectedRowKeys: number, selectedRows: []) => {
+                  console.log('selectedRowKeys:', selectedRowKeys, selectedRows);
               }
           }}
         />
