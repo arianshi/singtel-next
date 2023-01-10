@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Table from './components/Table';
 import styles from '../styles/Home.module.css';
-import {ReactElement, JSXElementConstructor, useState} from 'react';
+import { ReactElement, JSXElementConstructor, useState } from 'react';
 
 export default function Home() {
  //Type
@@ -65,7 +65,8 @@ export default function Home() {
  const handleRowSelectionClick = (item: string) => {
      setShowRowSelection(item);
  }
- console.log('type', type);
+ console.log('showRowSelection', showRowSelection);
+
   return (
     <>
       <Head>
@@ -96,13 +97,13 @@ export default function Home() {
           columns={columns}
           data={data}
           showHead
-          rowSelection={{
+          rowSelection={ showRowSelection === 'Open' ? {
               type,
               selectedRowKeys,
               onSelect: (selectedRowKeys: number, selectedRows: []) => {
                   console.log('selectedRowKeys:', selectedRowKeys, selectedRows);
               }
-          }}
+          } : null}
         />
       </main>
     </>

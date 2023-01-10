@@ -8,7 +8,11 @@ interface TableProps {
   showHead: boolean;
   columns: any;
   data: any;
-  rowSelection?: any
+  rowSelection?: {
+    type: 'checkbox',
+    selectedRowKeys: [],
+    onSelect: () => void,
+  } | any;
 }
 
 const Table: React.FC<TableProps> = ({ rowSelection, showHead, columns, data }) => {

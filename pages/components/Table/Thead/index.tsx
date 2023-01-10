@@ -7,9 +7,10 @@ interface THeadProps {
 
 const THead: React.FC<THeadProps> = ({ columns }) => {
 
-  return <div className={styles.thead}>
-        <label className={styles.tbodyCheckbox}/>
-        {columns.map((item: any, index: number)=> <span className={styles.title} key={index}>{item.title}</span>)}
+  return <div className={styles.theadWrapper}>
+          <div className={styles.theadContent}>
+            {columns.map((item: any, index: number)=> <span className={styles.title} key={index}>{item.title}</span>)}
+          </div>
       </div>
 };
 

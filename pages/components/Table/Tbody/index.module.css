@@ -3,7 +3,6 @@
     align-items: center;
     color: #000;
     height: 84px;
-    border-bottom: 1px solid #E1E1E1;
 }
 
 .tbodyWrapper:hover {
@@ -11,9 +10,20 @@
     background-color: #EFEDFD;
 }
 
-.tbodyWrapper:last-child {
+.tbodyContent {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    color: #000;
+    border-bottom: 1px solid #E1E1E1;
+    margin: 0 24px;
+}
+
+.tbodyContentLast {
     border-bottom: none;
 }
+
 .checkbox {
     cursor: pointer;
     position: relative;
@@ -90,9 +100,8 @@
    background-color: #fff;
 }
 
-.tbodyWrapper .tbodyItem {
+.tbodyItem {
     flex: 1;
-    margin: 0 24px;
     font-weight: 350;
     font-size: 20px;
     line-height: 35px;
@@ -104,6 +113,6 @@
     text-overflow:ellipsis;
 }
 
-.tbodyWrapper .tbodyItem:nth-child(2) {
+.tbodyItem:nth-child(2) {
     flex: 1.5;
 }

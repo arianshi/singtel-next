@@ -1,6 +1,5 @@
 import React, {useCallback, useState, memo} from 'react';
 import styles from './index.module.css'
-import {number, string} from "prop-types";
 
 interface columnsProps {
     title: string;
@@ -49,14 +48,16 @@ const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data}) => {
         setSelectedRows(object);
     }
 
+    console.log('rowSelection', rowSelection);
     rowSelection?.onSelect(selectedRowKeys?.filter((i: string) => i && i?.trim()), selectedRows)
 
-    const readerTbody = (index: number, object: any) => {
+    const readerTbody = (index: number, object: any, data: any) => {
 
         return (
             <div
                 className={styles.tbodyWrapper}
                 key={index}>
+                <div className={`${styles.tbodyContent} ${ data?.length - 1 === index ? styles.tbodyContentLast : ''}`}>
                 {rowSelection && <label className={selectedRowKeys.includes(index.toString()) ?
                     styles[`${rowSelection.type}Checked`] : styles[rowSelection.type]}>
                     <input onClick={(e: any) => handleClick(e, object)}
@@ -72,12 +73,13 @@ const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data}) => {
                         </span>
                     );
                 })}
+                </div>
             </div>
         );
     }
-    return <div className={styles.table}>
+    return <div className={styles.tableContainer}>
         {data?.map((object, index) => {
-            return readerTbody(index, object);
+            return readerTbody(index, object, data);
         })}
     </div>;
 };
