@@ -105,4 +105,4 @@ const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data }) => {
   );
 };
 
-export default memo(Tbody);
+export default Tbody;
