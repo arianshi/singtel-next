@@ -15,12 +15,54 @@ export default function Home() {
     const headAction = ['Open', 'Closed'];
 
     const [selectedRowKeys, setSelectedRowKeys] = useState(['1']);
+    const [data, setData] = useState([
+        {
+            id: 1,
+            price: 170000,
+            operator: 'Celcom Axiata',
+            display: 'CELCOM / My Celcom / 502 19',
+            availability: 'Yes',
+        },
+        {
+            id: 2,
+            price: 250000,
+            operator: 'DiGi Telecom',
+            display: 'DiGi 1800 / DiGi /  MYMY18',
+            availability: 'Yes'
+        },
+        {
+            id: 3,
+            price: 160000,
+            operator: 'Maxis (LTE)',
+            display: 'U Mobile / MYS 18 / MY 18',
+            availability: 'Yes'
+        },
+        {
+            id: 4,
+            price: 460000,
+            operator: 'U Mobile (LTE)',
+            display: 'U Mobile / MYS 18 / MY 18',
+            availability: 'Yes'
+        }
+    ]);
+
     const columns = [
         {
             title: 'Operator',
             key: 'operator',
             dataIndex: 'operator',
             render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => <span>{e}</span>,
+        },
+        {
+            title: 'Price',
+            key: 'price',
+            dataIndex: 'price',
+            sorter: (data: any) => {
+                setData(data?.slice());
+            },
+            render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => {
+                return <span>{parseInt(e?.toString())?.toLocaleString('en-US')}</span>
+            },
         },
         {
             title: 'Headset Display',
@@ -33,32 +75,6 @@ export default function Home() {
             key: 'availability',
             dataIndex: 'availability',
             render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => <span>{e}</span>,
-        },
-    ];
-    const data = [
-        {
-            id: 1,
-            operator: '*Celcom Axiata (LTE)',
-            display: 'CELCOM / My Celcom / 502 19',
-            availability: 'Yes'
-        },
-        {
-            id: 2,
-            operator: '*DiGi Telecom (LTE)',
-            display: 'DiGi 1800 / DiGi /  MYMY18',
-            availability: 'Yes'
-        },
-        {
-            id: 3,
-            operator: '*Maxis (LTE)',
-            display: 'U Mobile / MYS 18 / MY 18',
-            availability: 'Yes'
-        },
-        {
-            id: 4,
-            operator: 'U Mobile (LTE)',
-            display: 'U Mobile / MYS 18 / MY 18',
-            availability: 'Yes'
         }
     ];
     const handleTypeClick = (item: string) => {
@@ -120,7 +136,7 @@ export default function Home() {
                         type,
                         selectedRowKeys,
                         onSelect: (selectedRowKeys: number, selectedRows: []) => {
-                            console.log('selectedRowKeys:', selectedRowKeys, selectedRows);
+                            //console.log('selectedRowKeys:', selectedRowKeys, selectedRows);
                         }
                     } : null}
                 />

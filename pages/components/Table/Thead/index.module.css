@@ -55,10 +55,37 @@
     border-radius: 8px;
 }
 
-.theadWrapper .theadContent .title {
+.theadItem {
+    display: flex;
+    flex-direction: row;
     flex: 1;
+    align-items: center;
+}
+.theadItemText {
     font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 20px;
     font-style: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.theadItemSortWrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+.theadItemSortWrapper:hover {
+    width: 32px;
+    height: 32px;
+    background: #DEDAFA;
+    border-radius: 100%;
+}
+.theadItemSort {
+    display: flex;
+    width: 10px;
+    height: 15px;
+    margin-left: 10px;
+    background: url("/down_arrow.svg") no-repeat;
 }

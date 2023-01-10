@@ -52,7 +52,6 @@ const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data}) => {
     rowSelection?.onSelect(selectedRowKeys?.filter((i: string) => i && i?.trim()), selectedRows)
 
     const readerTbody = (index: number, object: any, data: any) => {
-
         return (
             <div
                 className={styles.tbodyWrapper}
