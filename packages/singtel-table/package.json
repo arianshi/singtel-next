@@ -1,6 +1,6 @@
 {
-    "name": "singtel-table",
-    "version": "0.0.1",
-    "main": "index.js",
-    "module": "index.js"
+  "name": "singtel-table",
+  "version": "0.0.1",
+  "main": "index.js",
+  "module": "index.js"
 }
