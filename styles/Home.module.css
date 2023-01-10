@@ -14,7 +14,7 @@
 .tableFilter {
   margin-bottom: 20px;
   color: #000;
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -29,6 +29,7 @@
 }
 .typeText {
   margin-right: 10px;
+  margin-left: 10px;
 }
 .tableType span {
   padding: 5px 12px;

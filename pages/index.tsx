@@ -4,10 +4,14 @@ import styles from '../styles/Home.module.css';
 import {ReactElement, JSXElementConstructor, useState} from 'react';
 
 export default function Home() {
- const [type, setType] = useState('radio');
- const [selectedRowKeys, setSelectedRowKeys] = useState(['1']);
+ //Type
+ const [type, setType] = useState<string>('radio');
+ const selectedRowType = [ 'radio', 'checkbox'];
+ //RowSelection
+ const [showRowSelection, setShowRowSelection] = useState<string>('Closed');
+ const rowSelectionAction = [ 'Closed', 'Open'];
 
-  const selectedRowType = [ 'radio', 'checkbox'];
+ const [selectedRowKeys, setSelectedRowKeys] = useState(['1']);
   const columns = [
         {
             title: 'Operator',
@@ -58,6 +62,9 @@ export default function Home() {
       setType(item);
       setSelectedRowKeys([]);
  }
+ const handleRowSelectionClick = (item: string) => {
+     setShowRowSelection(item);
+ }
  console.log('type', type);
   return (
     <>
@@ -70,6 +77,13 @@ export default function Home() {
       <main className={styles.main}>
         <span className={styles.title}>Table Component</span>
         <div className={styles.tableFilter}>
+            <span className={styles.typeText}>Show RowSelection:</span>
+            <div className={styles.tableType}>
+                {rowSelectionAction.map((item, index) => <span
+                    onClick={() => { handleRowSelectionClick(item) }}
+                    key ={index}
+                    className={item === showRowSelection ? styles.checked : styles.normal}>{item}</span>)}
+            </div>
             <span className={styles.typeText}>Type:</span>
             <div className={styles.tableType}>
                 {selectedRowType.map((item, index) => <span

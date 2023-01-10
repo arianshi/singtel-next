@@ -8,7 +8,7 @@ interface TableProps {
   showHead: boolean;
   columns: any;
   data: any;
-  rowSelection: any
+  rowSelection?: any
 }
 
 const Table: React.FC<TableProps> = ({ rowSelection, showHead, columns, data }) => {

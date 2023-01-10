@@ -6,21 +6,25 @@ interface columnsProps {
     title: string;
     key: string;
     dataIndex: string;
-    render: any;
+    render: (item: string, object: any) => void;
 }
 
 interface TbodyProps {
     columns: columnsProps[];
     data: [];
-    rowSelection: any,
+    rowSelection?: {
+        type: 'checkbox',
+        selectedRowKeys: [],
+        onSelect: () => void,
+    } | any;
 }
 
 
 const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data}) => {
 
-    const [selectedRowKeys, setSelectedRowKeys] = useState(rowSelection.selectedRowKeys);
+    const [selectedRowKeys, setSelectedRowKeys] = useState(rowSelection?.selectedRowKeys || []);
     const [selectedRows, setSelectedRows] = useState([]);
-    const isCheckbox = rowSelection.type === 'checkbox';
+    const isCheckbox = rowSelection?.type === 'checkbox';
 
     const handleClick = useCallback(
         (e: any, object: any) => {
@@ -45,7 +49,7 @@ const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data}) => {
         setSelectedRows(object);
     }
 
-    rowSelection.onSelect(selectedRowKeys?.filter((i: string)=>i && i?.trim()), selectedRows)
+    rowSelection?.onSelect(selectedRowKeys?.filter((i: string) => i && i?.trim()), selectedRows)
 
     const readerTbody = (index: number, object: any) => {
 
@@ -53,18 +57,18 @@ const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data}) => {
             <div
                 className={styles.tbodyWrapper}
                 key={index}>
-                <label className={selectedRowKeys.includes(index.toString()) ?
-                    styles[`${rowSelection.type}Checked`]: styles[rowSelection.type]}>
+                {rowSelection && <label className={selectedRowKeys.includes(index.toString()) ?
+                    styles[`${rowSelection.type}Checked`] : styles[rowSelection.type]}>
                     <input onClick={(e: any) => handleClick(e, object)}
                            className={styles.inputRadio}
                            type={rowSelection.type}
                            name={rowSelection.type}
                            value={index}/>
-                </label>
+                </label>}
                 {columns.map((item, index) => {
                     return (
                         <span className={styles.tbodyItem} key={item.key + index}>
-                            {item.render  ? item.render(object[item.key], object) : object[item.key]}
+                            {item.render ? item.render(object[item.key], object) : object[item.key]}
                         </span>
                     );
                 })}
