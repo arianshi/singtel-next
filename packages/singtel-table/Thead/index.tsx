@@ -46,8 +46,6 @@ const THead: React.FC<THeadProps> = ({
                   onClick={() => {
                     newData?.sort(item?.sorter);
                     setCopyNewData(newData?.slice());
-                    console.log('newData slice', newData);
-                    console.log('oldData', oldData);
                     setSortChecked({
                       ...sortChecked,
                       [index]: !sortChecked[index],
