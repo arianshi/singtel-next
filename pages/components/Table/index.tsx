@@ -16,7 +16,6 @@ interface TableProps {
 }
 
 const Table: React.FC<TableProps> = ({ rowSelection, showHead, columns, data }) => {
-  console.log('reader Table')
   return <div className={styles.table}>
     {showHead && <Thead rowSelection={rowSelection} columns={columns} data={data}/>}
     <Tbody rowSelection={rowSelection} columns={columns} data={data}/>

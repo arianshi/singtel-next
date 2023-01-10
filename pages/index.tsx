@@ -57,6 +57,8 @@ export default function Home() {
             title: 'Price',
             key: 'price',
             dataIndex: 'price',
+            defaultSortOrder: 'ascend',
+            sortDirections: ['descend'],
             sorter: (data: any) => {
                 setData(data?.slice());
             },
@@ -118,6 +120,7 @@ export default function Home() {
                             key={index}
                             className={item === showRowSelection ? styles.checked : styles.normal}>{item}</span>)}
                     </div>
+                    {showRowSelection  === 'Open' && <>
                     <span className={styles.typeText}>Type:</span>
                     <div className={styles.tableType}>
                         {selectedRowType.map((item, index) => <span
@@ -127,6 +130,7 @@ export default function Home() {
                             key={index}
                             className={item === type ? styles.checked : styles.normal}>{`${item.charAt(0).toUpperCase()}${item.slice(1)}`}</span>)}
                     </div>
+                    </>}
                 </div>
                 <Table
                     columns={columns}
