@@ -52,7 +52,16 @@ const THead: React.FC<THeadProps> = ({
                     });
                   }}
                 >
-                  <span className={styles.theadItemSort} />
+                  <span
+                    className={
+                      item?.sortDirections?.includes('descend') &&
+                      item?.sortDirections?.includes('ascend')
+                        ? styles.theadItemSortAscendAndDescend
+                        : item?.sortDirections?.includes('descend')
+                        ? styles.theadItemSortDescend
+                        : styles.theadItemSortAscend
+                    }
+                  />
                 </div>
               )}
             </div>

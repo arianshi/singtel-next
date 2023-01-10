@@ -53,16 +53,16 @@ export default function Home() {
       render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => (
         <span>{e}</span>
       ),
-      /* sorter: (a: any, b: any) => {
-                return a.operator.length - b.operator.length;
-            },*/
+      sorter: (a: any, b: any) => {
+        return a.operator.length - b.operator.length;
+      },
     },
     {
       title: 'Price',
       key: 'price',
       dataIndex: 'price',
       defaultSortOrder: 'ascend',
-      sortDirections: ['descend'],
+      sortDirections: ['descend', 'ascend'],
       render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => {
         return <span>{parseInt(e?.toString())?.toLocaleString('en-US')}</span>;
       },
