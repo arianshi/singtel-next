@@ -40,6 +40,7 @@
 }
 .tableType .checked {
   color: #5C50BB;
+  font-weight: bolder;
   background-color: #fff;
 }
 
