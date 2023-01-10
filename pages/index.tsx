@@ -51,7 +51,7 @@ export default function Home() {
             key: 'operator',
             dataIndex: 'operator',
             render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => <span>{e}</span>,
-            /*sorter: (a: any, b: any) => {
+           /* sorter: (a: any, b: any) => {
                 return a.operator.length - b.operator.length;
             },*/
         },

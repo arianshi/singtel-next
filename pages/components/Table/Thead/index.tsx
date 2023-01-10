@@ -8,16 +8,14 @@ interface THeadProps {
         selectedRowKeys: [],
         onSelect: () => void,
     } | any;
-    data: any;
+    oldData: any;
+    newData: any;
     setCopyNewData: any;
-}
-interface sortCheckedProps {
-    [key: string]: boolean;
+    sortChecked: any;
+    setSortChecked: any;
 }
 
-const THead: React.FC<THeadProps> = ({ columns, rowSelection, data, setCopyNewData }) => {
-
-    const [sortChecked, setSortChecked] = useState<sortCheckedProps>({});
+const THead: React.FC<THeadProps> = ({ columns, rowSelection, oldData, newData, setCopyNewData, sortChecked, setSortChecked }) => {
 
     return <div className={styles.theadWrapper}>
         <div className={styles.theadContent}>
@@ -30,12 +28,14 @@ const THead: React.FC<THeadProps> = ({ columns, rowSelection, data, setCopyNewDa
                     {item?.sorter && <div
                         className={`${styles.theadItemSortWrapper} ${sortChecked[index] ? styles.theadItemSortCheckedWrapper : ''}`}
                         onClick={() => {
-                        data?.sort(item?.sorter);
-                        setCopyNewData(data.slice());
-                            setSortChecked({
+                        newData?.sort(item?.sorter);
+                        setCopyNewData(newData?.slice());
+                        console.log('newData slice', newData);
+                        console.log('oldData', oldData)
+                        setSortChecked({
                                 ...sortChecked,
                                 [index]: !sortChecked[index]
-                            });
+                         });
                     }}>
                      <span className={styles.theadItemSort}/>
                     </div>}
