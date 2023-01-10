@@ -2,5 +2,8 @@
   "name": "singtel-table",
   "version": "0.0.1",
   "main": "index.js",
-  "module": "index.js"
+  "module": "index.js",
+  "private": true,
+  "license": "MIT",
+  "author": "arian.shi@outlook.com"
 }
