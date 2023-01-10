@@ -8,7 +8,7 @@ export default function Home() {
  const [type, setType] = useState<string>('radio');
  const selectedRowType = [ 'radio', 'checkbox'];
  //RowSelection
- const [showRowSelection, setShowRowSelection] = useState<string>('Closed');
+ const [showRowSelection, setShowRowSelection] = useState<string>('Open');
  const rowSelectionAction = [ 'Closed', 'Open'];
 
  const [selectedRowKeys, setSelectedRowKeys] = useState(['1']);
@@ -90,7 +90,7 @@ export default function Home() {
                 {selectedRowType.map((item, index) => <span
                     onClick={() => { handleTypeClick(item) }}
                     key ={index}
-                    className={item === type ? styles.checked : styles.normal}>{item}</span>)}
+                    className={item === type ? styles.checked : styles.normal}>{`${item.charAt(0).toUpperCase()}${item.slice(1)}`}</span>)}
            </div>
         </div>
         <Table
