@@ -85,8 +85,11 @@ export default function Home() {
   // Head
   const [showHead, setShowHead] = useState<string>('Open');
   const headAction = ['Open', 'Closed'];
+  // Theme
+  const [theme, setTheme] = useState<string>('Purple');
+  const themes = ['Purple', 'Pink'];
 
-  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  const [selectedRowKeys, setSelectedRowKeys] = useState(['0']);
   const handleTypeClick = (item: string) => {
     setType(item);
   };
@@ -96,7 +99,10 @@ export default function Home() {
   const handleHeadClick = (item: string) => {
     setShowHead(item);
   };
-  console.log('showRowSelection', showRowSelection);
+  const handleThemeClick = (item: string) => {
+    setTheme(item);
+  };
+
   return (
     <>
       <Head>
@@ -108,6 +114,22 @@ export default function Home() {
       <main className={styles.main}>
         <span className={styles.title}>Table Component</span>
         <div className={styles.tableFilter}>
+          <div className={styles.tableFilterItem}>
+            <span className={styles.typeText}>Theme:</span>
+            <div className={styles.tableType}>
+              {themes.map((item, index) => (
+                <span
+                  onClick={() => {
+                    handleThemeClick(item);
+                  }}
+                  key={index}
+                  className={item === theme ? styles.checked : styles.normal}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
           <div className={styles.tableFilterItem}>
             <span className={styles.typeText}>Header:</span>
             <div className={styles.tableType}>

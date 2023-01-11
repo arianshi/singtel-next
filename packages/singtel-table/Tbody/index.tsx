@@ -1,4 +1,4 @@
-import React, { useCallback, useState, memo, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import styles from './index.module.css';
 
 interface columnsProps {
