@@ -3,6 +3,78 @@ import { ReactElement, JSXElementConstructor, useState } from 'react';
 import Table from '../packages/singtel-table';
 import styles from '../styles/Home.module.css';
 
+export const data = [
+  {
+    id: 1,
+    price: 170000,
+    operator: 'Aelcom Axiatavvv',
+    display: 'CELCOM / My Celcom / 502 19',
+    availability: 'Yes',
+  },
+  {
+    id: 2,
+    price: 250000,
+    operator: 'HiGiTelecom',
+    display: 'DiGi 1800 / DiGi /  MYMY18',
+    availability: 'Yes',
+  },
+  {
+    id: 3,
+    price: 160000,
+    operator: 'Kaxis (LTE)',
+    display: 'U Mobile / MYS 18 / MY 18',
+    availability: 'Yes',
+  },
+  {
+    id: 4,
+    price: 460000,
+    operator: 'DMobile (LTE)',
+    display: 'U Mobile / MYS 18 / MY 18',
+    availability: 'Yes',
+  },
+];
+export const columns = [
+  {
+    title: 'Operator',
+    key: 'operator',
+    dataIndex: 'operator',
+    sortDirections: ['descend'],
+    render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => (
+      <span>{e}</span>
+    ),
+    sorter: (a: any, b: any) => {
+      return a.operator.length - b.operator.length;
+    },
+  },
+  {
+    title: 'Price',
+    key: 'price',
+    dataIndex: 'price',
+    sortDirections: ['ascend'],
+    render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => {
+      return <span>{parseInt(e?.toString())?.toLocaleString('en-US')}</span>;
+    },
+    sorter: (a: any, b: any) => {
+      return a.price - b.price;
+    },
+  },
+  {
+    title: 'Headset Display',
+    key: 'display',
+    dataIndex: 'display',
+    render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => (
+      <span>{e}</span>
+    ),
+  },
+  {
+    title: '3G Availability',
+    key: 'availability',
+    dataIndex: 'availability',
+    render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => (
+      <span>{e}</span>
+    ),
+  },
+];
 export default function Home() {
   //Type
   const [type, setType] = useState<string>('radio');
@@ -15,78 +87,6 @@ export default function Home() {
   const headAction = ['Open', 'Closed'];
 
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-  const [data, setData] = useState([
-    {
-      id: 1,
-      price: 170000,
-      operator: 'Aelcom Axiatavvv',
-      display: 'CELCOM / My Celcom / 502 19',
-      availability: 'Yes',
-    },
-    {
-      id: 2,
-      price: 250000,
-      operator: 'HiGiTelecom',
-      display: 'DiGi 1800 / DiGi /  MYMY18',
-      availability: 'Yes',
-    },
-    {
-      id: 3,
-      price: 160000,
-      operator: 'Kaxis (LTE)',
-      display: 'U Mobile / MYS 18 / MY 18',
-      availability: 'Yes',
-    },
-    {
-      id: 4,
-      price: 460000,
-      operator: 'DMobile (LTE)',
-      display: 'U Mobile / MYS 18 / MY 18',
-      availability: 'Yes',
-    },
-  ]);
-  const columns = [
-    {
-      title: 'Operator',
-      key: 'operator',
-      dataIndex: 'operator',
-      sortDirections: ['descend'],
-      render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => (
-        <span>{e}</span>
-      ),
-      sorter: (a: any, b: any) => {
-        return a.operator.length - b.operator.length;
-      },
-    },
-    {
-      title: 'Price',
-      key: 'price',
-      dataIndex: 'price',
-      sortDirections: ['ascend'],
-      render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => {
-        return <span>{parseInt(e?.toString())?.toLocaleString('en-US')}</span>;
-      },
-      sorter: (a: any, b: any) => {
-        return a.price - b.price;
-      },
-    },
-    {
-      title: 'Headset Display',
-      key: 'display',
-      dataIndex: 'display',
-      render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => (
-        <span>{e}</span>
-      ),
-    },
-    {
-      title: '3G Availability',
-      key: 'availability',
-      dataIndex: 'availability',
-      render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => (
-        <span>{e}</span>
-      ),
-    },
-  ];
   const handleTypeClick = (item: string) => {
     setType(item);
   };

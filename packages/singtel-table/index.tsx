@@ -5,7 +5,7 @@ import Tbody from './Tbody';
 import styles from './index.module.css';
 
 interface TableProps {
-  showHead: boolean;
+  showHead?: boolean;
   columns: any;
   data: any;
   rowSelection?:
