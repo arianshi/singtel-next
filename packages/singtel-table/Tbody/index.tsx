@@ -52,7 +52,6 @@ const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data }) => {
     setSelectedRows(object);
   };
 
-  console.log('rowSelection', rowSelection);
   rowSelection?.onSelect(
     selectedRowKeys?.filter((i: string) => i && i?.trim()),
     selectedRows
