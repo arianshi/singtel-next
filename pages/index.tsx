@@ -92,7 +92,7 @@ export default function Home() {
   const headAction = ['Open', 'Closed'];
   // Theme
   const [theme, setTheme] = useState<string>('purple');
-  const themes = ['purple', 'pink'];
+  const themes = ['purple', 'pink', 'green'];
 
   const [selectedRowKeys, setSelectedRowKeys] = useState(['0']);
   const handleTypeClick = (item: string) => {
@@ -138,7 +138,7 @@ export default function Home() {
                   key={index}
                   className={item === theme ? styles.checked : styles.normal}
                 >
-                  {item}
+                  {`${item.charAt(0).toUpperCase()}${item.slice(1)}`}
                 </span>
               ))}
             </div>
