@@ -43,7 +43,7 @@
   background-color: rgb(242,243,245);
 }
 .tableType .checked {
-  color: #5C50BB;
+  color: var(--singtel-radio-checked);
   font-weight: bolder;
   background-color: #fff;
 }
@@ -80,7 +80,7 @@
     background-color: rgb(242,243,245);
   }
   .tableType .checked {
-    color: #5C50BB;
+    color: var(--singtel-radio-checked);
     font-weight: bolder;
     background-color: #fff;
   }

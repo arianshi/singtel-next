@@ -1,5 +1,10 @@
 import Head from 'next/head';
-import { ReactElement, JSXElementConstructor, useState } from 'react';
+import {
+  ReactElement,
+  JSXElementConstructor,
+  useState,
+  useEffect,
+} from 'react';
 import Table from '../packages/singtel-table';
 import styles from '../styles/Home.module.css';
 
@@ -86,8 +91,8 @@ export default function Home() {
   const [showHead, setShowHead] = useState<string>('Open');
   const headAction = ['Open', 'Closed'];
   // Theme
-  const [theme, setTheme] = useState<string>('Purple');
-  const themes = ['Purple', 'Pink'];
+  const [theme, setTheme] = useState<string>('purple');
+  const themes = ['purple', 'pink'];
 
   const [selectedRowKeys, setSelectedRowKeys] = useState(['0']);
   const handleTypeClick = (item: string) => {
@@ -102,6 +107,14 @@ export default function Home() {
   const handleThemeClick = (item: string) => {
     setTheme(item);
   };
+
+  useEffect(() => {
+    // 为了不向外面暴露当前的主题，统一主题通过window.btoa进行加密。
+    document?.documentElement?.setAttribute(
+      'singtel-table-theme',
+      window.btoa(theme)
+    );
+  }, [theme]);
 
   return (
     <>

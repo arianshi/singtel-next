@@ -1,42 +1,17 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: Avenir LT Std;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: #fff;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+/*主题色定义请以 singtel 开头保持统一, 避免样式覆盖
+紫色风格主题 purple经过原生btoa方法加密 cHVycGxl */
+:root, [singtel-table-theme="cHVycGxl"]  {
+  --singtel-radio-checked: #5C50BB;
+  --singtel-table-hover: #EFEDFD;
+  --singtel-checkbox-checked: #5C50BB;
 }
+/* 粉红主题 pink经过原生btoa方法加密 cGluaw== */
+[singtel-table-theme="cGluaw=="] {
+  --singtel-radio-checked: pink;
+  --singtel-table-hover: pink;
+  --singtel-checkbox-checked: pink;
+}
+
 
 * {
   box-sizing: border-box;
