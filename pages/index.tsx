@@ -74,9 +74,6 @@ export default function Home() {
       title: 'Headset Display',
       key: 'display',
       dataIndex: 'display',
-      sorter: (a: any, b: any) => {
-        return a.display.length - b.display.length;
-      },
       render: (e: ReactElement<any, string | JSXElementConstructor<any>>) => (
         <span>{e}</span>
       ),

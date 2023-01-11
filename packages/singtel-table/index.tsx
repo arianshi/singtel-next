@@ -25,7 +25,6 @@ const Table: React.FC<TableProps> = ({
 }) => {
   const [sortChecked, setSortChecked] = useState([]);
   const [copyNewData, setCopyNewData] = useState(data);
-  console.log('sortChecked', sortChecked);
   return (
     <div className={styles.table}>
       {showHead && (
