@@ -4,18 +4,21 @@ purple 主题 purple经过原生btoa方法加密  cHVycGxl */
   --singtel-radio-checked: #5C50BB;
   --singtel-table-hover: #EFEDFD;
   --singtel-checkbox-checked: #5C50BB;
+  --singtel-thead-short-checked: #DEDAFA;
 }
 /* pink 主题 pink经过原生btoa方法加密 cGluaw== */
 [singtel-table-theme="cGluaw=="] {
   --singtel-radio-checked: pink;
   --singtel-table-hover: pink;
   --singtel-checkbox-checked: pink;
+  --singtel-thead-short-checked: pink;
 }
 /* green 主题 pink经过原生btoa方法加密 Z3JlZW4= */
 [singtel-table-theme="Z3JlZW4="] {
   --singtel-radio-checked: #0958d9;
   --singtel-table-hover:#91caff;
   --singtel-checkbox-checked: #0958d9;
+  --singtel-thead-short-checked: #0958d9;
 }
 
 

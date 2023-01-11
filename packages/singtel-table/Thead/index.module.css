@@ -51,7 +51,7 @@
     margin-left: 24px;
     width: 32px;
     height: 32px;
-    background: #5C50BB;
+    background: var(--singtel-radio-checked);
     border-radius: 8px;
 }
 
@@ -80,7 +80,7 @@
 .theadItemSortCheckedWrapper {
     width: 32px;
     height: 32px;
-    background: #DEDAFA;
+    background: var(--singtel-thead-short-checked);
     border-radius: 100%;
     margin-left: 5px;
 }
