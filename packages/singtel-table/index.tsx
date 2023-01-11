@@ -17,18 +17,15 @@ interface TableProps {
     | any;
 }
 
-interface sortCheckedProps {
-  [key: string]: boolean;
-}
-
 const Table: React.FC<TableProps> = ({
   rowSelection,
   showHead,
   columns,
   data,
 }) => {
-  const [sortChecked, setSortChecked] = useState<sortCheckedProps>({});
+  const [sortChecked, setSortChecked] = useState([]);
   const [copyNewData, setCopyNewData] = useState(data);
+  console.log('sortChecked', sortChecked);
   return (
     <div className={styles.table}>
       {showHead && (

@@ -20,7 +20,6 @@ interface THeadProps {
 const THead: React.FC<THeadProps> = ({
   columns,
   rowSelection,
-  oldData,
   newData,
   setCopyNewData,
   sortChecked,
@@ -41,25 +40,23 @@ const THead: React.FC<THeadProps> = ({
               {item?.sorter && (
                 <div
                   className={`${styles.theadItemSortWrapper} ${
-                    sortChecked[index] ? styles.theadItemSortCheckedWrapper : ''
+                    sortChecked.includes(index)
+                      ? styles.theadItemSortCheckedWrapper
+                      : ''
                   }`}
                   onClick={() => {
                     newData?.sort(item?.sorter);
                     setCopyNewData(newData?.slice());
-                    setSortChecked({
-                      ...sortChecked,
-                      [index]: !sortChecked[index],
-                    });
+                    setSortChecked([index]);
                   }}
                 >
                   <span
                     className={
-                      item?.sortDirections?.includes('descend') &&
-                      item?.sortDirections?.includes('ascend')
-                        ? styles.theadItemSortAscendAndDescend
-                        : item?.sortDirections?.includes('descend')
+                      item?.sortDirections?.includes('descend')
                         ? styles.theadItemSortDescend
-                        : styles.theadItemSortAscend
+                        : item?.sortDirections?.includes('ascend')
+                        ? styles.theadItemSortAscend
+                        : styles.theadItemSortAscendAndDescend
                     }
                   />
                 </div>
