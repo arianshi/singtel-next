@@ -1,7 +1,7 @@
 import Head from 'next/head';
+import { ReactElement, JSXElementConstructor, useState } from 'react';
 import Table from '../packages/singtel-table';
 import styles from '../styles/Home.module.css';
-import { ReactElement, JSXElementConstructor, useState } from 'react';
 
 export default function Home() {
   //Type
@@ -112,52 +112,58 @@ export default function Home() {
       <main className={styles.main}>
         <span className={styles.title}>Table Component</span>
         <div className={styles.tableFilter}>
-          <span className={styles.typeText}>Header:</span>
-          <div className={styles.tableType}>
-            {rowSelectionAction.map((item, index) => (
-              <span
-                onClick={() => {
-                  handleHeadClick(item);
-                }}
-                key={index}
-                className={item === showHead ? styles.checked : styles.normal}
-              >
-                {item}
-              </span>
-            ))}
+          <div className={styles.tableFilterItem}>
+            <span className={styles.typeText}>Header:</span>
+            <div className={styles.tableType}>
+              {rowSelectionAction.map((item, index) => (
+                <span
+                  onClick={() => {
+                    handleHeadClick(item);
+                  }}
+                  key={index}
+                  className={item === showHead ? styles.checked : styles.normal}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
-          <span className={styles.typeText}>RowSelection:</span>
-          <div className={styles.tableType}>
-            {headAction.map((item, index) => (
-              <span
-                onClick={() => {
-                  handleRowSelectionClick(item);
-                }}
-                key={index}
-                className={
-                  item === showRowSelection ? styles.checked : styles.normal
-                }
-              >
-                {item}
-              </span>
-            ))}
+          <div className={styles.tableFilterItem}>
+            <span className={styles.typeText}>RowSelection:</span>
+            <div className={styles.tableType}>
+              {headAction.map((item, index) => (
+                <span
+                  onClick={() => {
+                    handleRowSelectionClick(item);
+                  }}
+                  key={index}
+                  className={
+                    item === showRowSelection ? styles.checked : styles.normal
+                  }
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
-          {showRowSelection === 'Open' && (
-            <>
-              <span className={styles.typeText}>Type:</span>
-              <div className={styles.tableType}>
-                {selectedRowType.map((item, index) => (
-                  <span
-                    onClick={() => {
-                      handleTypeClick(item);
-                    }}
-                    key={index}
-                    className={item === type ? styles.checked : styles.normal}
-                  >{`${item.charAt(0).toUpperCase()}${item.slice(1)}`}</span>
-                ))}
-              </div>
-            </>
-          )}
+          <div className={styles.tableFilterItem}>
+            {showRowSelection === 'Open' && (
+              <>
+                <span className={styles.typeText}>Type:</span>
+                <div className={styles.tableType}>
+                  {selectedRowType.map((item, index) => (
+                    <span
+                      onClick={() => {
+                        handleTypeClick(item);
+                      }}
+                      key={index}
+                      className={item === type ? styles.checked : styles.normal}
+                    >{`${item.charAt(0).toUpperCase()}${item.slice(1)}`}</span>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
         </div>
         <Table
           columns={columns}

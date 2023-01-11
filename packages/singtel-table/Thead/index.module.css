@@ -107,3 +107,96 @@
   background: url("/down_arrow.svg") no-repeat;
   transform: rotate(-180deg);
 }
+
+@media screen and (max-width: 768px) {
+  .theadWrapper {
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .theadContent {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    margin: 0 16px;
+  }
+  .checkbox {
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+
+  .tbodyCheckbox {
+    margin-left: 16px;
+    width: 24px;
+    height: 24px;
+
+  }
+  .tbodyCheckboxChecked {
+    margin-left: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .theadItem {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    min-width: 80px;
+  }
+
+  .theadItemText {
+    font-size: 14px;
+  }
+  .theadItemSortWrapper {
+    width: 24px;
+    height: 24px;
+
+  }
+  .theadItemSortCheckedWrapper {
+    width: 24px;
+    height: 24px;
+  }
+  .theadItemSortWrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-left: 5px;
+    transform: scale(0.8);
+  }
+
+  .theadItemSortAscendAndDescend {
+    display: flex;
+    width: 10px;
+    height: 15px;
+    min-width: 10px;
+    margin-left: 6px;
+    background: url("/down_and_up.svg") no-repeat;
+    transform: scale(0.8);
+  }
+  .theadItemSortDescend {
+    display: flex;
+    width: 10px;
+    height: 15px;
+    min-width: 10px;
+    margin-left: 6px;
+    background: url("/down_arrow.svg") no-repeat;
+    transform: scale(0.8);
+  }
+  .theadItemSortAscend {
+    display: flex;
+    width: 10px;
+    height: 15px;
+    min-width: 10px;
+    margin-left: 6px;
+    background: url("/down_arrow.svg") no-repeat;
+    transform: rotate(-180deg) scale(0.8);
+  }
+}
