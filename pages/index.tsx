@@ -14,7 +14,7 @@ export default function Home() {
   const [showHead, setShowHead] = useState<string>('Open');
   const headAction = ['Open', 'Closed'];
 
-  const [selectedRowKeys, setSelectedRowKeys] = useState(['1']);
+  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [data, setData] = useState([
     {
       id: 1,
@@ -89,7 +89,6 @@ export default function Home() {
   ];
   const handleTypeClick = (item: string) => {
     setType(item);
-    setSelectedRowKeys([]);
   };
   const handleRowSelectionClick = (item: string) => {
     setShowRowSelection(item);

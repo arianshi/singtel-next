@@ -1,4 +1,4 @@
-import React, { useCallback, useState, memo } from 'react';
+import React, { useCallback, useState, memo, useEffect } from 'react';
 import styles from './index.module.css';
 
 interface columnsProps {
@@ -21,11 +21,18 @@ interface TbodyProps {
 }
 
 const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data }) => {
+  const isRadio = rowSelection?.type === 'radio';
+  const isCheckbox = rowSelection?.type === 'checkbox';
+  const [selectedRows, setSelectedRows] = useState([]);
   const [selectedRowKeys, setSelectedRowKeys] = useState(
     rowSelection?.selectedRowKeys || []
   );
-  const [selectedRows, setSelectedRows] = useState([]);
-  const isCheckbox = rowSelection?.type === 'checkbox';
+
+  useEffect(() => {
+    if ([isRadio, isCheckbox].includes(true)) {
+      setSelectedRowKeys(rowSelection?.selectedRowKeys || []);
+    }
+  }, [rowSelection, rowSelection?.type]);
 
   const handleClick = useCallback(
     (e: any, object: any) => {
@@ -36,7 +43,6 @@ const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data }) => {
     },
     [selectedRowKeys]
   );
-
   const handleCheckBoxClick = (value: string, object: any) => {
     let newCheckboxArr = [...selectedRowKeys];
     if (newCheckboxArr.indexOf(value) >= 0) {
