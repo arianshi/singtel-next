@@ -9,7 +9,7 @@ purple 主题 purple经过原生btoa方法加密  cHVycGxl */
 /* pink 主题 pink经过原生btoa方法加密 cGluaw== */
 [singtel-table-theme="cGluaw=="] {
   --singtel-radio-checked: pink;
-  --singtel-table-hover: pink;
+  --singtel-table-hover: #ffe6e6;
   --singtel-checkbox-checked: pink;
   --singtel-thead-short-checked: pink;
 }
