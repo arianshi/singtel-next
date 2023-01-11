@@ -120,11 +120,6 @@
     height: 40px;
   }
 
-  .tbodyWrapper:hover {
-    cursor: pointer;
-    background-color: #EFEDFD;
-  }
-
   .tbodyContent {
     display: flex;
     align-items: center;
@@ -154,7 +149,6 @@
     margin-right: 16px;
     width: 24px;
     height: 24px;
-    background: var(--singtel-radio-checked);
     border-radius: 8px;
   }
   .checkboxChecked::before {
@@ -184,7 +178,6 @@
     position: relative;
     width: 24px;
     height: 24px;
-    background: var(--singtel-radio-checked);
     border-radius: 100%;
   }
   .radioChecked::before {
