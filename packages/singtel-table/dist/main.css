@@ -1,3 +1,19 @@
+/*!************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./index.module.css ***!
+  \************************************************************************************************/
+.index-module__table--cCpR7 {
+    width: 800px;
+    height: auto;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .index-module__table--cCpR7 {
+    width: calc(100% - 10px);
+  }
+}
+
 /*!******************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./Thead/index.module.css ***!
   \******************************************************************************************************/
@@ -427,22 +443,6 @@
     min-width: 80px;
     max-width: 85px;
     text-overflow:ellipsis;
-  }
-}
-
-/*!************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./index.module.css ***!
-  \************************************************************************************************/
-.index-module__table--cCpR7 {
-    width: 800px;
-    height: auto;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-    border-radius: 16px;
-    overflow: hidden;
-}
-@media screen and (max-width: 768px) {
-  .index-module__table--cCpR7 {
-    width: calc(100% - 10px);
   }
 }
 
