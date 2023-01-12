@@ -122,8 +122,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Table Component</title>
-        <meta name="description" content="Table Component" />
+        <title>Singtel Table Component</title>
+        <meta name="description" content="Singtel Table Component" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
