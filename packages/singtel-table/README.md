@@ -1,6 +1,6 @@
 # `singtel-table`
 
-singtel-table is a JavaScript library for creating your table.
+singtel-table is a javaScript package for creating your table.
 
 ## Usage
 
