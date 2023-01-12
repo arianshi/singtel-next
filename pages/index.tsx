@@ -81,7 +81,7 @@ export const columns = [
   },
 ];
 export default function Home() {
-  const Table = dynamic(() => import('../packages/singtel-table'), {
+  const Table = dynamic(() => import('../packages/singtel-table/index'), {
     ssr: false,
   });
   //Type
