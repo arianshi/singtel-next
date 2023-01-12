@@ -33,6 +33,7 @@ const Table: React.FC<TableProps> = ({
       );
     }
   }, [theme]);
+
   const [sortChecked, setSortChecked] = useState([]);
   const [copyNewData, setCopyNewData] = useState(data);
   return (
