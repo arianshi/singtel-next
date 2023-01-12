@@ -5,7 +5,7 @@ import {
   useState,
   useEffect,
 } from 'react';
-import Table from '../packages/singtel-table';
+import dynamic from 'next/dynamic';
 import styles from '../styles/Home.module.css';
 
 export const data = [
@@ -81,6 +81,9 @@ export const columns = [
   },
 ];
 export default function Home() {
+  const Table = dynamic(() => import('../packages/singtel-table'), {
+    ssr: false,
+  });
   //Type
   const [type, setType] = useState<string>('radio');
   const selectedRowType = ['radio', 'checkbox'];
