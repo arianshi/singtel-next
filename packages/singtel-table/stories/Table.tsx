@@ -6,6 +6,9 @@ interface TableProps {
    * Is this the principal call to action on the page?
    */
   showHead?: boolean;
+  data: [];
+  columns: [];
+  rowSelection: {};
 }
 
 /**

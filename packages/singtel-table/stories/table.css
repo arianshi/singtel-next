@@ -1,22 +1,32 @@
 /*主题色定义请以 singtel 开头保持统一, 避免样式覆盖
 purple 主题 purple经过原生btoa方法加密  cHVycGxl */
 :root, [singtel-table-theme="cHVycGxl"]  {
-  --singtel-radio-checked: #5C50BB;
+  --singtel-table-radio-checked: #5C50BB;
   --singtel-table-hover: #EFEDFD;
-  --singtel-checkbox-checked: #5C50BB;
-  --singtel-thead-short-checked: #DEDAFA;
+  --singtel-table-sort-checked: #DEDAFA;
 }
 /* pink 主题 pink经过原生btoa方法加密 cGluaw== */
 [singtel-table-theme="cGluaw=="] {
-  --singtel-radio-checked: pink;
+  --singtel-table-radio-checked: pink;
   --singtel-table-hover: #ffe6e6;
-  --singtel-checkbox-checked: pink;
-  --singtel-thead-short-checked: pink;
+  --singtel-table-sort-checked: pink;
 }
 /* blue 主题 blue经过原生btoa方法加密 Z3JlZW4= */
 [singtel-table-theme="Ymx1ZQ=="] {
-  --singtel-radio-checked: #0958d9;
+  --singtel-table-radio-checked: #0958d9;
   --singtel-table-hover:#91caff;
-  --singtel-checkbox-checked: #0958d9;
-  --singtel-thead-short-checked: #0958d9;
+  --singtel-table-sort-checked: #0958d9;
+}
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/assets/font/Avenir_35.otf');
+}
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: Avenir;
+  color: black;
 }
