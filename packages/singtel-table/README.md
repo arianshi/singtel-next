@@ -97,12 +97,14 @@ root.render(<App />);
 ```
 ## Theme
 Purple Theme:
-![Purple Theme logo](https://github.com/arianshi/singtel-next/blob/main/packages/singtel-table/demo/purple_theme.png "Purple Theme")
+![Purple Theme](https://github.com/arianshi/singtel-next/blob/main/packages/singtel-table/demo/purple_theme.png "Purple Theme")
 Pink Theme:
-![Pink Theme logo](https://github.com/arianshi/singtel-next/blob/main/packages/singtel-table/demo/pink_theme.png "Purple Theme")
+![Pink Theme](https://github.com/arianshi/singtel-next/blob/main/packages/singtel-table/demo/pink_theme.png "Purple Theme")
 Blue Theme:
-![Blue Theme logo](https://github.com/arianshi/singtel-next/blob/main/packages/singtel-table/demo/blue_theme.png "Purple Theme")
+![Blue Theme](https://github.com/arianshi/singtel-next/blob/main/packages/singtel-table/demo/blue_theme.png "Purple Theme")
 
+## Table bookStory
 
+![bookStory](https://github.com/arianshi/singtel-next/blob/main/packages/singtel-table/demo/bookStory.png "Table bookStory")
 
 
