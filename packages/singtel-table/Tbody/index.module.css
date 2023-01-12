@@ -39,7 +39,7 @@
     margin-right: 24px;
     width: 32px;
     height: 32px;
-    background: var(--singtel-radio-checked);
+    background: var(--singtel-table-radio-checked);
     border-radius: 8px;
 }
 .checkboxChecked::before {
@@ -69,7 +69,7 @@
     position: relative;
     width: 32px;
     height: 32px;
-    background: var(--singtel-radio-checked);
+    background: var(--singtel-table-radio-checked);
     border-radius: 100%;
 }
 .radioChecked::before {
