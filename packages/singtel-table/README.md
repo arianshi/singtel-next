@@ -95,3 +95,14 @@ function Counter() {
 const root = createRoot(document.getElementById('root'));
 root.render(<App />);
 ```
+## Theme
+Purple Theme:
+![Purple Theme logo](./demo/purple_theme.png "Purple Theme")
+Pink Theme:
+![Pink Theme logo](./demo/pink_theme.png "Purple Theme")
+Blue Theme:
+![Blue Theme logo](./demo/blue_theme.png "Purple Theme")
+
+
+
+

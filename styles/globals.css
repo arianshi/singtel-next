@@ -13,8 +13,8 @@ purple 主题 purple经过原生btoa方法加密  cHVycGxl */
   --singtel-checkbox-checked: pink;
   --singtel-thead-short-checked: pink;
 }
-/* green 主题 pink经过原生btoa方法加密 Z3JlZW4= */
-[singtel-table-theme="Z3JlZW4="] {
+/* blue 主题 blue经过原生btoa方法加密 Z3JlZW4= */
+[singtel-table-theme="Ymx1ZQ=="] {
   --singtel-radio-checked: #0958d9;
   --singtel-table-hover:#91caff;
   --singtel-checkbox-checked: #0958d9;

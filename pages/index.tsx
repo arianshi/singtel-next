@@ -95,7 +95,7 @@ export default function Home() {
   const headAction = ['Open', 'Closed'];
   // Theme
   const [theme, setTheme] = useState<string>('purple');
-  const themes = ['purple', 'pink', 'green'];
+  const themes = ['purple', 'pink', 'blue'];
 
   const [selectedRowKeys, setSelectedRowKeys] = useState(['0']);
   const handleTypeClick = (item: string) => {
