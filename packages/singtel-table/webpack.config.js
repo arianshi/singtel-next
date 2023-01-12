@@ -9,7 +9,7 @@ module.exports = {
   entry: './index',
   output: {
     filename: 'lib/index.js',
-    library: ['shared-components'],
+    library: ['singtel-table'],
     libraryTarget: 'umd',
   },
   module: {
