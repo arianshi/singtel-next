@@ -1,10 +1,11 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import Thead from './Thead';
 import Tbody from './Tbody';
 
 import styles from './index.module.css';
 
 interface TableProps {
+  theme?: string | 'purple';
   showHead?: boolean;
   columns: any;
   data: any;
@@ -22,7 +23,16 @@ const Table: React.FC<TableProps> = ({
   showHead,
   columns,
   data,
+  theme,
 }) => {
+  useEffect(() => {
+    if (typeof theme === 'string') {
+      document?.documentElement?.setAttribute(
+        'singtel-table-theme',
+        window.btoa(theme)
+      );
+    }
+  }, [theme]);
   const [sortChecked, setSortChecked] = useState([]);
   const [copyNewData, setCopyNewData] = useState(data);
   return (

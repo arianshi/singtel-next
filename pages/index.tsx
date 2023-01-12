@@ -111,14 +111,6 @@ export default function Home() {
     setTheme(item);
   };
 
-  useEffect(() => {
-    // 为了不向外面暴露当前的主题，统一主题通过window.btoa进行加密。
-    document?.documentElement?.setAttribute(
-      'singtel-table-theme',
-      window.btoa(theme)
-    );
-  }, [theme]);
-
   return (
     <>
       <Head>
@@ -202,6 +194,7 @@ export default function Home() {
         <Table
           columns={columns}
           data={data}
+          theme={theme}
           showHead={showHead === 'Open'}
           rowSelection={
             showRowSelection === 'Open'
