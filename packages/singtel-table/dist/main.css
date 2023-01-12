@@ -1,0 +1,448 @@
+/*!******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./Thead/index.module.css ***!
+  \******************************************************************************************************/
+.Thead-index-module__theadWrapper--Ylfhs {
+    display: flex;
+    align-items: center;
+    color: #000;
+    height: 80px;
+    line-height: 80px;
+    background: #F7F7F7;
+}
+
+.Thead-index-module__theadContent--iXvDx {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    margin: 0 24px;
+}
+.Thead-index-module__checkbox--JhrZp {
+    visibility: hidden;
+    cursor: pointer;
+    position: relative;
+    margin-right: 24px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #A8A8A8;
+    border-radius: 8px;
+}
+
+.Thead-index-module__inputRadio--NxxQj {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Thead-index-module__tbodyCheckbox--GGoJw {
+    visibility: hidden;
+    cursor: pointer;
+    position: relative;
+    margin-left: 24px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #A8A8A8;
+    border-radius: 8px;
+}
+.Thead-index-module__tbodyCheckboxChecked--Rj6SP {
+    cursor: pointer;
+    position: relative;
+    margin-left: 24px;
+    width: 32px;
+    height: 32px;
+    background: var(--singtel-radio-checked);
+    border-radius: 8px;
+}
+
+.Thead-index-module__theadItem--mib2N {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+}
+.Thead-index-module__theadItemText--GQxv2 {
+    font-weight: 700;
+    font-size: 20px;
+    font-style: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Thead-index-module__theadItemSortWrapper--FA6Mr {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    margin-left: 5px;
+}
+.Thead-index-module__theadItemSortCheckedWrapper--WcXVM {
+    width: 32px;
+    height: 32px;
+    background: var(--singtel-thead-short-checked);
+    border-radius: 100%;
+    margin-left: 5px;
+}
+
+.Thead-index-module__theadItemSortAscendAndDescend--DvYQi {
+  display: flex;
+  width: 10px;
+  height: 15px;
+  margin-left: 10px;
+  background: url(db3ecd5bbf438b3f2555.svg) no-repeat;
+}
+.Thead-index-module__theadItemSortDescend--PF7n2 {
+    display: flex;
+    width: 10px;
+    height: 15px;
+    margin-left: 10px;
+    background: url(b09d9ec56dd0917d31df.svg) no-repeat;
+}
+.Thead-index-module__theadItemSortAscend--TXKtf {
+  display: flex;
+  width: 10px;
+  height: 15px;
+  margin-left: 10px;
+  background: url(b09d9ec56dd0917d31df.svg) no-repeat;
+  transform: rotate(-180deg);
+}
+
+@media screen and (max-width: 768px) {
+  .Thead-index-module__theadWrapper--Ylfhs {
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .Thead-index-module__theadContent--iXvDx {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    margin: 0 16px;
+  }
+  .Thead-index-module__checkbox--JhrZp {
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+
+  .Thead-index-module__tbodyCheckbox--GGoJw {
+    margin-left: 16px;
+    width: 24px;
+    height: 24px;
+
+  }
+  .Thead-index-module__tbodyCheckboxChecked--Rj6SP {
+    margin-left: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .Thead-index-module__theadItem--mib2N {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    min-width: 80px;
+    max-width: 85px;
+  }
+
+  .Thead-index-module__theadItemText--GQxv2 {
+    font-size: 14px;
+  }
+  .Thead-index-module__theadItemSortWrapper--FA6Mr {
+    width: 24px;
+    height: 24px;
+
+  }
+  .Thead-index-module__theadItemSortCheckedWrapper--WcXVM {
+    width: 24px;
+    height: 24px;
+  }
+  .Thead-index-module__theadItemSortWrapper--FA6Mr {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin-left: 5px;
+    transform: scale(0.8);
+  }
+
+  .Thead-index-module__theadItemSortAscendAndDescend--DvYQi {
+    display: flex;
+    width: 10px;
+    height: 15px;
+    min-width: 10px;
+    margin-left: 5px;
+    transform: scale(0.8);
+  }
+  .Thead-index-module__theadItemSortDescend--PF7n2 {
+    display: flex;
+    width: 10px;
+    height: 15px;
+    min-width: 10px;
+    margin-left: 5px;
+    transform: scale(0.8);
+  }
+  .Thead-index-module__theadItemSortAscend--TXKtf {
+    display: flex;
+    width: 10px;
+    height: 15px;
+    min-width: 10px;
+    margin-left: 5px;
+    transform: rotate(-180deg) scale(0.8);
+  }
+}
+
+/*!******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./Tbody/index.module.css ***!
+  \******************************************************************************************************/
+.Tbody-index-module__tbodyWrapper--CgGLK {
+    display: flex;
+    align-items: center;
+    color: #000;
+    height: 84px;
+}
+
+.Tbody-index-module__tbodyWrapper--CgGLK:hover {
+    cursor: pointer;
+    background-color: var(--singtel-table-hover);
+}
+
+.Tbody-index-module__tbodyContent--X2h02 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    color: #000;
+    border-bottom: 1px solid #E1E1E1;
+    margin: 0 24px;
+}
+
+.Tbody-index-module__tbodyContentLast--DqmXS {
+    border-bottom: none;
+}
+
+.Tbody-index-module__checkbox--l1FlG {
+    cursor: pointer;
+    position: relative;
+    margin-right: 24px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #A8A8A8;
+    border-radius: 8px;
+}
+.Tbody-index-module__checkboxChecked--hxHbc {
+    cursor: pointer;
+    position: relative;
+    margin-right: 24px;
+    width: 32px;
+    height: 32px;
+    background: var(--singtel-radio-checked);
+    border-radius: 8px;
+}
+.Tbody-index-module__checkboxChecked--hxHbc::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    width: 6px;
+    height: 14px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: translateX(40%) translateY(35%) rotate(45deg);
+}
+
+.Tbody-index-module__radio--mVkVv {
+    cursor: pointer;
+    position: relative;
+    margin-right: 24px;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    border: 1px solid #A8A8A8;
+}
+.Tbody-index-module__radioChecked--fEJel {
+    margin-right: 24px;
+    cursor: pointer;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background: var(--singtel-radio-checked);
+    border-radius: 100%;
+}
+.Tbody-index-module__radioChecked--fEJel::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 100%;
+    transform: translateX(-10%) translateY(50%);
+}
+
+.Tbody-index-module__inputRadio--ZYvaE {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.Tbody-index-module__spanRadio--ugoj9 {
+   width: 32px;
+   height: 32px;
+   border-radius: 100%;
+   background-color: #fff;
+}
+
+.Tbody-index-module__tbodyItem--gAMBQ {
+    flex: 1;
+    font-weight: 350;
+    font-size: 20px;
+    line-height: 35px;
+    letter-spacing: 0.001em;
+    font-style: normal;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+@media screen and (max-width: 768px) {
+  .Tbody-index-module__tbodyWrapper--CgGLK {
+    display: flex;
+    align-items: center;
+    color: #000;
+    height: 40px;
+  }
+
+  .Tbody-index-module__tbodyContent--X2h02 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    color: #000;
+    border-bottom: 1px solid #E1E1E1;
+    margin: 0 16px;
+  }
+
+  .Tbody-index-module__tbodyContentLast--DqmXS {
+    border-bottom: none;
+  }
+
+  .Tbody-index-module__checkbox--l1FlG {
+    cursor: pointer;
+    position: relative;
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #A8A8A8;
+    border-radius: 8px;
+  }
+  .Tbody-index-module__checkboxChecked--hxHbc {
+    cursor: pointer;
+    position: relative;
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+  }
+  .Tbody-index-module__checkboxChecked--hxHbc::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    width: 6px;
+    height: 14px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: translateX(-15%) translateY(18%) rotate(45deg);
+  }
+
+  .Tbody-index-module__radio--mVkVv {
+    cursor: pointer;
+    position: relative;
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    border: 1px solid #A8A8A8;
+  }
+  .Tbody-index-module__radioChecked--fEJel {
+    margin-right: 16px;
+    cursor: pointer;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+  }
+  .Tbody-index-module__radioChecked--fEJel::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 100%;
+    transform: translateX(-37%) translateY(26%)
+  }
+
+  .Tbody-index-module__inputRadio--ZYvaE {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .Tbody-index-module__spanRadio--ugoj9 {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-color: #fff;
+  }
+
+  .Tbody-index-module__tbodyItem--gAMBQ {
+    flex: 1;
+    font-weight: 350;
+    font-size: 14px;
+    line-height: 35px;
+    letter-spacing: 0.001em;
+    font-style: normal;
+    width: 100%;
+    overflow: hidden;
+    min-width: 80px;
+    max-width: 85px;
+    text-overflow:ellipsis;
+  }
+}
+
+/*!************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./index.module.css ***!
+  \************************************************************************************************/
+.index-module__table--cCpR7 {
+    width: 800px;
+    height: auto;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  .index-module__table--cCpR7 {
+    width: calc(100% - 10px);
+  }
+}
+

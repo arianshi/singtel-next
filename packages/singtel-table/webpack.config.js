@@ -1,6 +1,5 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
@@ -24,7 +23,16 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: true } },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: {
+                auto: true,
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              },
+            },
+          },
         ],
       },
       {
