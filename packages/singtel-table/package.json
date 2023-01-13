@@ -56,5 +56,6 @@
     "lib/**/style/*",
     "*.css",
     "*.less"
-  ]
+  ],
+  "gitHead": "65d962e1cc8b2211db9acbd1a6a76cb1a952f976"
 }
