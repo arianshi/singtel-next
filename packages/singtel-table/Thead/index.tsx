@@ -1,6 +1,7 @@
 import React from 'react';
+import { ROW_SELECTION_TYPE, SORT_TYPE } from "../constants";
 import { ColumnsType } from "../index";
-import { ROW_SELECTION_TYPE, SORT_TYPE } from "../constants/table";
+
 
 import styles from './index.module.css';
 

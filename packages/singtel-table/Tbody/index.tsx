@@ -1,6 +1,6 @@
 import React, {useCallback, useState, useEffect, ReactNode} from 'react';
 import styles from './index.module.css';
-import {ROW_SELECTION_TYPE} from "../constants/table";
+import {ROW_SELECTION_TYPE} from "../constants";
 import {columns} from "../../../pages";
 
 export interface ColumnsType<T> {
