@@ -63,7 +63,16 @@ const THead: React.FC<THeadProps<any>> = ({
                         ? styles.theadItemSortAscend
                         : styles.theadItemSortAscendAndDescend
                     }
-                  />
+                  >
+                    <svg
+                      viewBox="0 0 1024 1024"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em">
+                      <path
+                      d="M558.933333 853.333333V128h-42.666666v733.866667l-145.066667-145.066667-29.866667 29.866667 192 192 192-192-29.866666-29.866667-136.533334 136.533333z"
+                      fill="#444444"/>
+                    </svg>
+                  </span>
                 </div>
               )}
             </div>

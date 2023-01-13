@@ -71,6 +71,7 @@
 }
 .theadItemSortWrapper {
     display: flex;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
     width: 32px;
@@ -78,32 +79,26 @@
     margin-left: 5px;
 }
 .theadItemSortCheckedWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 32px;
     height: 32px;
+    margin-left: 5px;
     background: var(--singtel-table-sort-checked);
     border-radius: 100%;
-    margin-left: 5px;
 }
 
-.theadItemSortAscendAndDescend {
-  display: flex;
-  width: 10px;
-  height: 15px;
-  margin-left: 10px;
-}
 .theadItemSortDescend {
-    display: flex;
-    width: 10px;
-    height: 15px;
-    margin-left: 10px;
-    background: url("/arrow.svg") no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .theadItemSortAscend {
   display: flex;
-  width: 10px;
-  height: 15px;
-  margin-left: 10px;
-  background: url("/arrow.svg") no-repeat;
+  justify-content: center;
+  align-items: center;
   transform: rotate(-180deg);
 }
 

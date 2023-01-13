@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-app",
+  "name": "singtel-table",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,7 +21,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.4",
-    "singtel-table": "^0.1.4"
+    "singtel-table": "^0.1.10"
   },
   "workspaces": [
     "packages/*"
