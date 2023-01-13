@@ -14435,7 +14435,7 @@
 
 "singtel-table@file:/Users/arian/Documents/Singapore/singtel-table/singtel-next/packages/singtel-table":
   "resolved" "file:packages/singtel-table"
-  "version" "0.1.12"
+  "version" "0.1.13"
   dependencies:
     "@babel/preset-react" "^7.12.10"
     "babel-plugin-react-css-modules" "^5.2.6"
