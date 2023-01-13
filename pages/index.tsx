@@ -201,7 +201,7 @@ export default function Home() {
                   type,
                   selectedRowKeys,
                   onSelect: (selectedRowKeys: number, selectedRows: []) => {
-                    //console.log('selectedRowKeys:', selectedRowKeys, selectedRows);
+                    console.log('selectedRowKeys:', selectedRowKeys, selectedRows);
                   },
                 }
               : null

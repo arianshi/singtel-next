@@ -1,12 +1,13 @@
 import React, {useCallback, useState, useEffect, ReactNode} from 'react';
 import styles from './index.module.css';
 import {ROW_SELECTION_TYPE} from "../constants/table";
+import {columns} from "../../../pages";
 
 export interface ColumnsType<T> {
   title: ReactNode;
   key: string;
   dataIndex: string;
-  render?: (field: string, records: T[]) => ReactNode;
+  render?: (record: T, records: T[]) => ReactNode;
   sorter?: (record: T, index: number, records: T[]) => void;
 }
 
@@ -23,6 +24,7 @@ interface TbodyProps<T>  {
 }
 
 const Tbody: React.FC<TbodyProps<any>> = ({ rowSelection, columns, data }) => {
+
   const isRadio = rowSelection?.type === ROW_SELECTION_TYPE.RADIO;
   const isCheckbox = rowSelection?.type === ROW_SELECTION_TYPE.CHECK_BOX;
   const [selectedRows, setSelectedRows] = useState([]);
@@ -65,7 +67,7 @@ const Tbody: React.FC<TbodyProps<any>> = ({ rowSelection, columns, data }) => {
     selectedRows
   );
 
-  const readerTbody = (index: number, object: any, data: any) => {
+  const readerTbody = (index: number, columnItem: any, data: any) => {
     return (
       <div className={styles.tbodyWrapper} key={index}>
         <div
@@ -82,7 +84,7 @@ const Tbody: React.FC<TbodyProps<any>> = ({ rowSelection, columns, data }) => {
               }
             >
               <input
-                onClick={(e: any) => handleClick(e, object)}
+                onClick={(e: any) => handleClick(e, columnItem)}
                 className={styles.inputRadio}
                 type={rowSelection.type}
                 name={rowSelection.type}
@@ -94,8 +96,8 @@ const Tbody: React.FC<TbodyProps<any>> = ({ rowSelection, columns, data }) => {
             return (
               <span className={styles.tbodyItem} key={item.key + index}>
                 {item.render
-                  ? item.render(object[item.key], object)
-                  : object[item.key]}
+                  ? item.render(columnItem[item.key], columnItem)
+                  : columnItem[item.key]}
               </span>
             );
           })}
@@ -105,8 +107,8 @@ const Tbody: React.FC<TbodyProps<any>> = ({ rowSelection, columns, data }) => {
   };
   return (
     <div className={styles.tableContainer}>
-      {data?.map((object, index) => {
-        return readerTbody(index, object, data);
+      {data?.map((columnItem, index) => {
+        return readerTbody(index, columnItem, data);
       })}
     </div>
   );

@@ -5,10 +5,10 @@ import Tbody from './Tbody';
 import styles from './index.module.css';
 
 export interface ColumnsType<T> {
-  title: ReactNode;
+  title: string;
   key: string;
   dataIndex: string;
-  render?: (field: string, records: T[]) => ReactNode;
+  render?: (record: T, records: T[]) => ReactNode;
   sorter?: (record: T, index: number, records: T[]) => void;
 }
 
