@@ -1,23 +1,26 @@
 import React from 'react';
+import { ColumnsType } from "../index";
+import { ROW_SELECTION_TYPE, SORT_TYPE } from "../constants/table";
+
 import styles from './index.module.css';
 
-interface THeadProps {
-  columns: any;
+interface THeadProps<T> {
+  columns: Array<ColumnsType<T>>;
   rowSelection?:
     | {
-        type: 'checkbox';
+        type: ROW_SELECTION_TYPE.CHECK_BOX;
         selectedRowKeys: [];
         onSelect: () => void;
       }
     | any;
-  oldData: any;
-  newData: any;
-  setCopyNewData: any;
-  sortChecked: any;
-  setSortChecked: any;
+  oldData: T[];
+  newData:T[];
+  setCopyNewData: (data: any) => void;
+  sortChecked: T[];
+  setSortChecked:(data: any) => void;
 }
 
-const THead: React.FC<THeadProps> = ({
+const THead: React.FC<THeadProps<any>> = ({
   columns,
   rowSelection,
   newData,
@@ -25,6 +28,7 @@ const THead: React.FC<THeadProps> = ({
   sortChecked,
   setSortChecked,
 }) => {
+
   return (
     <div className={styles.theadWrapper}>
       <div className={styles.theadContent}>
@@ -52,9 +56,9 @@ const THead: React.FC<THeadProps> = ({
                 >
                   <span
                     className={
-                      item?.sortDirections?.includes('descend')
+                      item?.sortDirections?.includes(SORT_TYPE.DESCEND)
                         ? styles.theadItemSortDescend
-                        : item?.sortDirections?.includes('ascend')
+                        : item?.sortDirections?.includes(SORT_TYPE.ASCEND)
                         ? styles.theadItemSortAscend
                         : styles.theadItemSortAscendAndDescend
                     }

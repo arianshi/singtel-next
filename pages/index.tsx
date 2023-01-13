@@ -3,7 +3,6 @@ import {
   ReactElement,
   JSXElementConstructor,
   useState,
-  useEffect,
 } from 'react';
 import dynamic from 'next/dynamic';
 import styles from '../styles/Home.module.css';

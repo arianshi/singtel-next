@@ -1,28 +1,30 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, {useCallback, useState, useEffect, ReactNode} from 'react';
 import styles from './index.module.css';
+import {ROW_SELECTION_TYPE} from "../constants/table";
 
-interface columnsProps {
-  title: string;
+export interface ColumnsType<T> {
+  title: ReactNode;
   key: string;
   dataIndex: string;
-  render: (item: string, object: any) => void;
+  render?: (field: string, records: T[]) => ReactNode;
+  sorter?: (record: T, index: number, records: T[]) => void;
 }
 
-interface TbodyProps {
-  columns: columnsProps[];
-  data: [];
+interface TbodyProps<T>  {
+  columns: Array<ColumnsType<T>>;
+  data: T[];
   rowSelection?:
     | {
-        type: 'checkbox';
+        type: ROW_SELECTION_TYPE.CHECK_BOX;
         selectedRowKeys: [];
         onSelect: () => void;
       }
     | any;
 }
 
-const Tbody: React.FC<TbodyProps> = ({ rowSelection, columns, data }) => {
-  const isRadio = rowSelection?.type === 'radio';
-  const isCheckbox = rowSelection?.type === 'checkbox';
+const Tbody: React.FC<TbodyProps<any>> = ({ rowSelection, columns, data }) => {
+  const isRadio = rowSelection?.type === ROW_SELECTION_TYPE.RADIO;
+  const isCheckbox = rowSelection?.type === ROW_SELECTION_TYPE.CHECK_BOX;
   const [selectedRows, setSelectedRows] = useState([]);
   const [selectedRowKeys, setSelectedRowKeys] = useState(
     rowSelection?.selectedRowKeys || []

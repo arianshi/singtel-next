@@ -1,14 +1,22 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, {memo, ReactNode, useEffect, useState} from 'react';
 import Thead from './Thead';
 import Tbody from './Tbody';
 
 import styles from './index.module.css';
 
-interface TableProps {
+export interface ColumnsType<T> {
+  title: ReactNode;
+  key: string;
+  dataIndex: string;
+  render?: (field: string, records: T[]) => ReactNode;
+  sorter?: (record: T, index: number, records: T[]) => void;
+}
+
+interface TableProps<T> {
   theme?: string | 'purple';
   showHead?: boolean;
-  columns: any;
-  data: any;
+  columns: Array<ColumnsType<T>>;
+  data: T[];
   rowSelection?:
     | {
         type: 'checkbox';
@@ -18,7 +26,7 @@ interface TableProps {
     | any;
 }
 
-const Table: React.FC<TableProps> = ({
+const Table: React.FC<TableProps<any>> = ({
   rowSelection,
   showHead,
   columns,
