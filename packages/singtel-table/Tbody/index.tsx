@@ -1,8 +1,6 @@
-import React, {useCallback, useState, useEffect, ReactNode} from 'react';
+import React, { useCallback, useState, useEffect, ReactNode } from 'react';
 import styles from './index.module.css';
-import {ROW_SELECTION_TYPE} from "../constants";
-import {columns} from "../../../pages";
-
+import { ROW_SELECTION_TYPE } from '../constants';
 export interface ColumnsType<T> {
   title: ReactNode;
   key: string;
@@ -11,7 +9,7 @@ export interface ColumnsType<T> {
   sorter?: (record: T, index: number, records: T[]) => void;
 }
 
-interface TbodyProps<T>  {
+interface TbodyProps<T> {
   columns: Array<ColumnsType<T>>;
   data: T[];
   rowSelection?:
@@ -24,7 +22,6 @@ interface TbodyProps<T>  {
 }
 
 const Tbody: React.FC<TbodyProps<any>> = ({ rowSelection, columns, data }) => {
-
   const isRadio = rowSelection?.type === ROW_SELECTION_TYPE.RADIO;
   const isCheckbox = rowSelection?.type === ROW_SELECTION_TYPE.CHECK_BOX;
   const [selectedRows, setSelectedRows] = useState([]);

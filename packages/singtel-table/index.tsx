@@ -1,4 +1,4 @@
-import React, {memo, ReactNode, useEffect, useState} from 'react';
+import React, { memo, ReactNode, useEffect, useState } from 'react';
 import Thead from './Thead';
 import Tbody from './Tbody';
 
